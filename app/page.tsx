@@ -114,7 +114,7 @@ export default function HomePage() {
               sbknext/forge-site
             </a>
             <a
-              href="mailto:kolate.sambhaji@gmail.com"
+              href="mailto:erp@sbknext.com"
               className="hover:text-ink-100"
             >
               Contact
