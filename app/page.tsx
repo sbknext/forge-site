@@ -407,37 +407,43 @@ export default function HomePage() {
 
               <aside className="install-side-info">
                 <div style={{ fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--text-3)', textTransform: 'uppercase', letterSpacing: '0.12em' }}>
-                  install from source
-                </div>
-
-                {/* Python */}
-                <div style={{ marginTop: 14 }}>
-                  <div style={{ fontFamily: 'var(--mono)', fontSize: 10, color: 'var(--ember)', marginBottom: 4, letterSpacing: '0.08em' }}>Python &ge; 3.9</div>
-                  <code style={{ display: 'block', fontFamily: 'var(--mono)', fontSize: 11.5, color: 'var(--text-1)', background: 'var(--surface-1)', padding: '6px 10px', borderRadius: 5, wordBreak: 'break-all' }}>
-                    pip install &quot;git+https://github.com/sbknext/forge-client.git#subdirectory=python&quot;
-                  </code>
+                  install
                 </div>
 
                 {/* Node */}
-                <div style={{ marginTop: 10 }}>
-                  <div style={{ fontFamily: 'var(--mono)', fontSize: 10, color: '#6ee7b7', marginBottom: 4, letterSpacing: '0.08em' }}>Node.js &ge; 18</div>
+                <div style={{ marginTop: 14 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
+                    <span style={{ fontFamily: 'var(--mono)', fontSize: 10, color: '#6ee7b7', letterSpacing: '0.08em' }}>Node.js &ge; 18</span>
+                    <span style={{ fontFamily: 'var(--mono)', fontSize: 9, color: '#6ee7b7', background: 'rgba(110,231,183,0.1)', border: '1px solid rgba(110,231,183,0.25)', borderRadius: 4, padding: '1px 5px', letterSpacing: '0.06em' }}>live on npm</span>
+                  </div>
                   <code style={{ display: 'block', fontFamily: 'var(--mono)', fontSize: 11.5, color: 'var(--text-1)', background: 'var(--surface-1)', padding: '6px 10px', borderRadius: 5, wordBreak: 'break-all' }}>
-                    git clone https://github.com/sbknext/forge-client<br />
-                    cd forge-client/node &amp;&amp; npm install
+                    npm install @sbkolate/forge
                   </code>
                 </div>
 
                 {/* Rust */}
                 <div style={{ marginTop: 10 }}>
-                  <div style={{ fontFamily: 'var(--mono)', fontSize: 10, color: '#c4a6f8', marginBottom: 4, letterSpacing: '0.08em' }}>Rust (Cargo.toml)</div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
+                    <span style={{ fontFamily: 'var(--mono)', fontSize: 10, color: '#c4a6f8', letterSpacing: '0.08em' }}>Rust (Cargo.toml)</span>
+                    <span style={{ fontFamily: 'var(--mono)', fontSize: 9, color: '#c4a6f8', background: 'rgba(196,166,248,0.1)', border: '1px solid rgba(196,166,248,0.25)', borderRadius: 4, padding: '1px 5px', letterSpacing: '0.06em' }}>live on crates.io</span>
+                  </div>
                   <code style={{ display: 'block', fontFamily: 'var(--mono)', fontSize: 11.5, color: 'var(--text-1)', background: 'var(--surface-1)', padding: '6px 10px', borderRadius: 5, wordBreak: 'break-all' }}>
-                    forge = &#123; git = &quot;https://github.com/sbknext/forge-client&quot; &#125;
+                    sbknext-forge = &quot;0.1&quot;
+                  </code>
+                </div>
+
+                {/* Python */}
+                <div style={{ marginTop: 10 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
+                    <span style={{ fontFamily: 'var(--mono)', fontSize: 10, color: 'var(--ember)', letterSpacing: '0.08em' }}>Python &ge; 3.9</span>
+                    <span style={{ fontFamily: 'var(--mono)', fontSize: 9, color: 'var(--text-3)', background: 'rgba(161,161,166,0.08)', border: '1px solid rgba(161,161,166,0.2)', borderRadius: 4, padding: '1px 5px', letterSpacing: '0.06em' }}>PyPI coming soon</span>
+                  </div>
+                  <code style={{ display: 'block', fontFamily: 'var(--mono)', fontSize: 11.5, color: 'var(--text-1)', background: 'var(--surface-1)', padding: '6px 10px', borderRadius: 5, wordBreak: 'break-all' }}>
+                    pip install &quot;git+https://github.com/sbknext/forge-client.git#subdirectory=python&quot;
                   </code>
                 </div>
 
                 <div style={{ marginTop: 12, fontFamily: 'var(--mono)', fontSize: 10.5, color: 'var(--text-3)', lineHeight: 1.6 }}>
-                  Packages coming to PyPI / npm / crates.io soon &mdash; installs from source today.
-                  <br />
                   <a href="https://github.com/sbknext/forge-client" style={{ color: 'var(--ember)', borderBottom: '1px dashed var(--ember-dim)' }}>
                     github.com/sbknext/forge-client &rarr;
                   </a>
