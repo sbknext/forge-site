@@ -425,7 +425,7 @@ export default function HomePage() {
                 <div style={{ marginTop: 10 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
                     <span style={{ fontFamily: 'var(--mono)', fontSize: 10, color: '#c4a6f8', letterSpacing: '0.08em' }}>Rust (Cargo.toml)</span>
-                    <span style={{ fontFamily: 'var(--mono)', fontSize: 9, color: '#c4a6f8', background: 'rgba(196,166,248,0.1)', border: '1px solid rgba(196,166,248,0.25)', borderRadius: 4, padding: '1px 5px', letterSpacing: '0.06em' }}>live on crates.io</span>
+                    <span style={{ fontFamily: 'var(--mono)', fontSize: 9, color: 'var(--text-3)', background: 'rgba(161,161,166,0.08)', border: '1px solid rgba(161,161,166,0.2)', borderRadius: 4, padding: '1px 5px', letterSpacing: '0.06em' }}>crates.io coming soon</span>
                   </div>
                   <code style={{ display: 'block', fontFamily: 'var(--mono)', fontSize: 11.5, color: 'var(--text-1)', background: 'var(--surface-1)', padding: '6px 10px', borderRadius: 5, wordBreak: 'break-all' }}>
                     sbknext-forge = &quot;0.1&quot;
@@ -436,10 +436,10 @@ export default function HomePage() {
                 <div style={{ marginTop: 10 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
                     <span style={{ fontFamily: 'var(--mono)', fontSize: 10, color: 'var(--ember)', letterSpacing: '0.08em' }}>Python &ge; 3.9</span>
-                    <span style={{ fontFamily: 'var(--mono)', fontSize: 9, color: 'var(--text-3)', background: 'rgba(161,161,166,0.08)', border: '1px solid rgba(161,161,166,0.2)', borderRadius: 4, padding: '1px 5px', letterSpacing: '0.06em' }}>PyPI coming soon</span>
+                    <span style={{ fontFamily: 'var(--mono)', fontSize: 9, color: 'var(--ember)', background: 'rgba(245,158,11,0.1)', border: '1px solid rgba(245,158,11,0.25)', borderRadius: 4, padding: '1px 5px', letterSpacing: '0.06em' }}>live on PyPI</span>
                   </div>
                   <code style={{ display: 'block', fontFamily: 'var(--mono)', fontSize: 11.5, color: 'var(--text-1)', background: 'var(--surface-1)', padding: '6px 10px', borderRadius: 5, wordBreak: 'break-all' }}>
-                    pip install &quot;git+https://github.com/sbknext/forge-client.git#subdirectory=python&quot;
+                    pip install sbknext-forge
                   </code>
                 </div>
 
