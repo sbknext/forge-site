@@ -4,15 +4,26 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Forge — Solo devs ship like teams",
   description:
-    "Forge is an open-source AI sub-agent framework. Spin up Sonnet-powered specialists from Python, Node, or Rust and ship like a full team — alone.",
+    "Multi-agent SDLC harness for solo developers. Python/Node/Rust SDKs, self-hostable, MIT.",
   metadataBase: new URL("https://forge.sbknext.com"),
+  icons: {
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+  },
   openGraph: {
     title: "Forge — Solo devs ship like teams",
     description:
-      "Open-source AI sub-agent framework. Python, Node, Rust. Self-host or use ours.",
+      "Multi-agent SDLC harness for solo developers. Python/Node/Rust SDKs, self-hostable, MIT.",
     url: "https://forge.sbknext.com",
     siteName: "Forge",
     type: "website",
+    images: ["/og-image.svg"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Forge — Solo devs ship like teams",
+    description:
+      "Multi-agent SDLC harness for solo developers. Python/Node/Rust SDKs, self-hostable, MIT.",
+    images: ["/og-image.svg"],
   },
 };
 

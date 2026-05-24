@@ -20,6 +20,9 @@ export default function HomePage() {
           <a href="#why" className="hover:text-ink-100">
             Why Forge
           </a>
+          <a href="#built" className="hover:text-ink-100">
+            Built with
+          </a>
           <a
             href={GITHUB_CLIENT}
             target="_blank"
@@ -37,9 +40,9 @@ export default function HomePage() {
           Solo devs ship like teams.
         </h1>
         <p className="mt-6 max-w-2xl text-lg text-ink-200 sm:text-xl">
-          Forge is an open-source framework for spinning up Sonnet-powered AI
-          sub-agents — reviewers, refactorers, testers, researchers — and
-          orchestrating them from a single Python, Node, or Rust process.
+          Forge is the multi-agent SDLC harness I built to ship Echo AI, Vaidya,
+          Brain MCP, and claude-fuse as a solo developer. MIT-licensed,
+          self-hostable, fork-friendly.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <a
@@ -56,6 +59,34 @@ export default function HomePage() {
           >
             View on GitHub
           </a>
+        </div>
+      </section>
+
+      {/* Architecture */}
+      <section id="how" className="mx-auto max-w-5xl px-6 py-16">
+        <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+          How it fits together.
+        </h2>
+        <p className="mt-3 max-w-2xl text-ink-300">
+          Your code talks to Forge Brain, which orchestrates sub-agents across
+          any LLM provider.
+        </p>
+        <div className="mt-8 grid items-stretch gap-4 sm:grid-cols-[1fr_auto_1fr_auto_1fr]">
+          <ArchBox
+            title="Your Code"
+            lines={["Python", "Node", "Rust"]}
+          />
+          <Arrow label="SDK" />
+          <ArchBox
+            title="Forge Brain"
+            lines={["self-host", "or hosted"]}
+            accent
+          />
+          <Arrow label="orchestrate" />
+          <ArchBox
+            title="LLM Providers"
+            lines={["Sonnet", "GPT", "Ollama"]}
+          />
         </div>
       </section>
 
@@ -89,6 +120,48 @@ export default function HomePage() {
           <Card
             title="Self-host or use ours"
             body="Run the Forge Brain backend on your own box, or point at our hosted endpoint. Switch with one env var."
+          />
+        </div>
+      </section>
+
+      {/* Built with Forge */}
+      <section id="built" className="mx-auto max-w-5xl px-6 py-16">
+        <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+          Built with Forge.
+        </h2>
+        <p className="mt-3 max-w-2xl text-ink-300">
+          Same framework. Same primitives. Shipped by one person.
+        </p>
+        <div className="mt-8 grid gap-4 sm:grid-cols-3">
+          <BuiltCard
+            title="Echo AI"
+            body="Wellness chatbot. Live since Apr 2026."
+            href="https://echo.sbknext.com"
+            cta="echo.sbknext.com"
+          />
+          <BuiltCard
+            title="Vaidya"
+            body="Ayurveda LLM for Indian users."
+            href="#"
+            cta="Coming soon"
+          />
+          <BuiltCard
+            title="Brain MCP"
+            body="Knowledge infrastructure. 7 production tools."
+            href="https://mcp.sbknext.com"
+            cta="mcp.sbknext.com"
+          />
+          <BuiltCard
+            title="claude-fuse"
+            body="Claude Code observability."
+            href="https://github.com/sbknext/claude-fuse"
+            cta="github.com/sbknext/claude-fuse"
+          />
+          <BuiltCard
+            title="Forge itself"
+            body="This site + the SDK + the docs. Self-hosting Forge."
+            href={GITHUB_SITE}
+            cta="github.com/sbknext/forge-site"
           />
         </div>
       </section>
@@ -133,5 +206,77 @@ function Card({ title, body }: { title: string; body: string }) {
       <h3 className="text-lg font-semibold text-ink-100">{title}</h3>
       <p className="mt-3 text-sm leading-relaxed text-ink-300">{body}</p>
     </div>
+  );
+}
+
+function ArchBox({
+  title,
+  lines,
+  accent,
+}: {
+  title: string;
+  lines: string[];
+  accent?: boolean;
+}) {
+  return (
+    <div
+      className={`flex flex-col rounded-lg border p-5 ${
+        accent
+          ? "border-ember-500 bg-ink-800"
+          : "border-ink-700 bg-ink-800"
+      }`}
+    >
+      <div
+        className={`text-sm font-semibold ${
+          accent ? "text-ember-500" : "text-ink-100"
+        }`}
+      >
+        {title}
+      </div>
+      <ul className="mt-2 space-y-1 text-xs text-ink-300">
+        {lines.map((l) => (
+          <li key={l}>{l}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function Arrow({ label }: { label: string }) {
+  return (
+    <div className="flex flex-col items-center justify-center text-ink-400 sm:px-2">
+      <div className="text-[10px] uppercase tracking-wider">{label}</div>
+      <div aria-hidden className="mt-1 hidden text-xl sm:block">
+        →
+      </div>
+      <div aria-hidden className="mt-1 text-xl sm:hidden">
+        ↓
+      </div>
+    </div>
+  );
+}
+
+function BuiltCard({
+  title,
+  body,
+  href,
+  cta,
+}: {
+  title: string;
+  body: string;
+  href: string;
+  cta: string;
+}) {
+  const external = href.startsWith("http");
+  return (
+    <a
+      href={href}
+      {...(external ? { target: "_blank", rel: "noreferrer" } : {})}
+      className="flex flex-col rounded-lg border border-ink-700 bg-ink-800 p-6 transition hover:border-ember-500"
+    >
+      <h3 className="text-lg font-semibold text-ink-100">{title}</h3>
+      <p className="mt-3 text-sm leading-relaxed text-ink-300">{body}</p>
+      <span className="mt-4 text-xs font-medium text-ember-500">{cta} →</span>
+    </a>
   );
 }
