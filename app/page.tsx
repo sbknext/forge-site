@@ -394,6 +394,7 @@ export default function HomePage() {
               </p>
             </div>
 
+            {/* Install tabs */}
             <div className="install-side">
               <div className="terminal">
                 <div className="terminal-bar">
@@ -406,30 +407,62 @@ export default function HomePage() {
 
               <aside className="install-side-info">
                 <div style={{ fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--text-3)', textTransform: 'uppercase', letterSpacing: '0.12em' }}>
-                  requirements
+                  install from source
                 </div>
-                <ul style={{ listStyle: 'none', marginTop: 12, display: 'flex', flexDirection: 'column', gap: 8, fontFamily: 'var(--mono)', fontSize: 12.5 }}>
-                  <li>· macOS 13+ <span style={{ color: 'var(--text-3)' }}>/ Linux glibc 2.28+</span></li>
-                  <li>· git <span style={{ color: 'var(--text-3)' }}>2.40+</span></li>
-                  <li>· optional · <span style={{ color: 'var(--ember)' }}>$ANTHROPIC_API_KEY</span></li>
-                  <li>· optional · <span style={{ color: 'var(--ember)' }}>$OPENAI_API_KEY</span></li>
-                  <li>· optional · ollama <span style={{ color: 'var(--text-3)' }}>(offline mode)</span></li>
-                </ul>
 
-                <div className="platform-row">
+                {/* Python */}
+                <div style={{ marginTop: 14 }}>
+                  <div style={{ fontFamily: 'var(--mono)', fontSize: 10, color: 'var(--ember)', marginBottom: 4, letterSpacing: '0.08em' }}>Python &ge; 3.9</div>
+                  <code style={{ display: 'block', fontFamily: 'var(--mono)', fontSize: 11.5, color: 'var(--text-1)', background: 'var(--surface-1)', padding: '6px 10px', borderRadius: 5, wordBreak: 'break-all' }}>
+                    pip install &quot;git+https://github.com/sbknext/forge-client.git#subdirectory=python&quot;
+                  </code>
+                </div>
+
+                {/* Node */}
+                <div style={{ marginTop: 10 }}>
+                  <div style={{ fontFamily: 'var(--mono)', fontSize: 10, color: '#6ee7b7', marginBottom: 4, letterSpacing: '0.08em' }}>Node.js &ge; 18</div>
+                  <code style={{ display: 'block', fontFamily: 'var(--mono)', fontSize: 11.5, color: 'var(--text-1)', background: 'var(--surface-1)', padding: '6px 10px', borderRadius: 5, wordBreak: 'break-all' }}>
+                    git clone https://github.com/sbknext/forge-client<br />
+                    cd forge-client/node &amp;&amp; npm install
+                  </code>
+                </div>
+
+                {/* Rust */}
+                <div style={{ marginTop: 10 }}>
+                  <div style={{ fontFamily: 'var(--mono)', fontSize: 10, color: '#c4a6f8', marginBottom: 4, letterSpacing: '0.08em' }}>Rust (Cargo.toml)</div>
+                  <code style={{ display: 'block', fontFamily: 'var(--mono)', fontSize: 11.5, color: 'var(--text-1)', background: 'var(--surface-1)', padding: '6px 10px', borderRadius: 5, wordBreak: 'break-all' }}>
+                    forge = &#123; git = &quot;https://github.com/sbknext/forge-client&quot; &#125;
+                  </code>
+                </div>
+
+                <div style={{ marginTop: 12, fontFamily: 'var(--mono)', fontSize: 10.5, color: 'var(--text-3)', lineHeight: 1.6 }}>
+                  Packages coming to PyPI / npm / crates.io soon &mdash; installs from source today.
+                  <br />
+                  <a href="https://github.com/sbknext/forge-client" style={{ color: 'var(--ember)', borderBottom: '1px dashed var(--ember-dim)' }}>
+                    github.com/sbknext/forge-client &rarr;
+                  </a>
+                </div>
+
+                <div style={{ marginTop: 16 }}>
+                  <div style={{ fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--text-3)', textTransform: 'uppercase', letterSpacing: '0.12em' }}>
+                    requirements
+                  </div>
+                  <ul style={{ listStyle: 'none', marginTop: 10, display: 'flex', flexDirection: 'column', gap: 6, fontFamily: 'var(--mono)', fontSize: 12 }}>
+                    <li>· macOS 13+ <span style={{ color: 'var(--text-3)' }}>/ Linux glibc 2.28+</span></li>
+                    <li>· git <span style={{ color: 'var(--text-3)' }}>2.40+</span></li>
+                    <li>· optional · <span style={{ color: 'var(--ember)' }}>$ANTHROPIC_API_KEY</span></li>
+                    <li>· optional · <span style={{ color: 'var(--ember)' }}>$OPENAI_API_KEY</span></li>
+                    <li>· optional · ollama <span style={{ color: 'var(--text-3)' }}>(offline mode)</span></li>
+                  </ul>
+                </div>
+
+                <div className="platform-row" style={{ marginTop: 14 }}>
                   <span className="platform-chip"><span className="dot" />macOS arm64</span>
                   <span className="platform-chip"><span className="dot" />macOS x64</span>
                   <span className="platform-chip"><span className="dot" />linux x64</span>
                   <span className="platform-chip" style={{ color: 'var(--text-3)' }}>
                     <span className="dot" style={{ background: 'var(--amber)' }} />windows · soon
                   </span>
-                </div>
-
-                <div style={{ marginTop: 18, fontFamily: 'var(--mono)', fontSize: 11.5, color: 'var(--text-3)', lineHeight: 1.7 }}>
-                  prefer manual?{' '}
-                  <a href="#" style={{ color: 'var(--ember)', borderBottom: '1px dashed var(--ember-dim)' }}>
-                    brew install sbknext/tap/forge
-                  </a>
                 </div>
               </aside>
             </div>
@@ -444,6 +477,13 @@ export default function HomePage() {
               <span className="eyebrow"><span className="bracket">/</span> why forge <span className="bracket">/</span></span>
               <h2>Don&apos;t read about agents.<br />Watch them work.</h2>
               <p>Three of Forge&apos;s four sub-agents, captured mid-run. Live. No screenshots.</p>
+            </div>
+
+            <div style={{ fontFamily: 'var(--mono)', fontSize: 10.5, color: 'var(--text-3)', marginBottom: 14, lineHeight: 1.6 }}>
+              Gallery shows planned CLI commands &mdash; see{' '}
+              <a href="https://github.com/sbknext/forge-client" style={{ color: 'var(--ember)', borderBottom: '1px dashed var(--ember-dim)' }}>
+                GitHub
+              </a>{' '}for current capabilities.
             </div>
 
             <div className="gallery">
