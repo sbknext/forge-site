@@ -32,7 +32,7 @@ export default function HomePage() {
             <a href="#install">install</a>
             <a href="#gallery">agents</a>
             <a href="#built">built with</a>
-            <a href="https://github.com/sbknext/forge">github ↗</a>
+            <a href="https://github.com/sbknext/forge-client" target="_blank" rel="noreferrer">github ↗</a>
           </nav>
           <a className="nav-cta" href="#install">$ install</a>
         </div>
@@ -572,7 +572,7 @@ export default function HomePage() {
                 <div className="desc">Voice-to-action assistant. Speak, and Echo dispatches a Forge agent to do the work.</div>
                 <div className="tail">
                   <span className="stat"><span className="ember">●</span> live since Apr 2026</span>
-                  <a className="link" href="#">open <span>→</span></a>
+                  <a className="link" href="https://echo.sbknext.com" target="_blank" rel="noreferrer">open <span>→</span></a>
                 </div>
               </div>
 
@@ -600,7 +600,7 @@ export default function HomePage() {
                 <div className="desc">Long-term memory protocol. The shared substrate every Forge agent reads + writes.</div>
                 <div className="tail">
                   <span className="stat"><span className="ember">●</span> 41 memories · 5 projects · self-hosted</span>
-                  <a className="link" href="#">docs <span>→</span></a>
+                  <a className="link" href="https://mcp.sbknext.com" target="_blank" rel="noreferrer">docs <span>→</span></a>
                 </div>
               </div>
 
@@ -614,7 +614,7 @@ export default function HomePage() {
                 <div className="desc">Filesystem MCP that lets Claude mount your repo. Read, write, watch — with policy.</div>
                 <div className="tail">
                   <span className="stat"><span className="ember">●</span> MIT · early access</span>
-                  <a className="link" href="#">github <span>→</span></a>
+                  <a className="link" href="https://github.com/sbknext/claude-fuse" target="_blank" rel="noreferrer">github <span>→</span></a>
                 </div>
               </div>
 
@@ -628,7 +628,7 @@ export default function HomePage() {
                 <div className="desc">This thing. Forge ships Forge. Every commit reviewed + tested + deployed by Forge.</div>
                 <div className="tail">
                   <span className="stat"><span className="ember">●</span> v0.4.3 · shipped today</span>
-                  <a className="link" href="#">source <span>→</span></a>
+                  <a className="link" href="https://github.com/sbknext/forge-client" target="_blank" rel="noreferrer">source <span>→</span></a>
                 </div>
               </div>
 
@@ -663,10 +663,11 @@ export default function HomePage() {
             <span className="glow-forge">Forge</span>
           </div>
           <div className="links">
-            <a href="https://github.com/sbknext/forge">github</a>
+            <a href="https://github.com/sbknext/forge-client" target="_blank" rel="noreferrer">github</a>
             <a href="#install">install</a>
             <a href="#architecture">docs</a>
-            <a href="#">@sbknext</a>
+            <a href="https://www.linkedin.com/in/sambhaji-kolate-845a7279/" target="_blank" rel="noreferrer">linkedin</a>
+            <a href="mailto:erp@sbknext.com">erp@sbknext.com</a>
           </div>
           <div style={{ fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--text-4)' }}>
             © 2026 sbknext · MIT
