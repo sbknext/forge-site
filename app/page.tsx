@@ -576,17 +576,17 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* Vaidya */}
+              {/* forge-linkedin */}
               <div className="product-card">
                 <div className="head">
-                  <div className="pmark" style={{ color: '#6ee7b7' }}>V</div>
-                  <div><div className="pname">Vaidya</div></div>
-                  <div className="meta soon"><span className="dot" />coming soon</div>
+                  <div className="pmark" style={{ color: '#ff7a1a' }}>L</div>
+                  <div><div className="pname">forge-linkedin</div></div>
+                  <div className="meta"><span className="dot" />live · v0.1.0</div>
                 </div>
-                <div className="desc">Clinical companion for solo practitioners. Notes in. Plan + chart out.</div>
+                <div className="desc">Safe-pace LinkedIn engagement. Tag-search + 30 likes/day, real Chrome session.</div>
                 <div className="tail">
-                  <span className="stat">private beta · q3</span>
-                  <a className="link" href="#">waitlist <span>→</span></a>
+                  <span className="stat"><span className="ember">●</span> cargo install forge-linkedin</span>
+                  <a className="link" href="https://github.com/sbknext/forge-linkedin" target="_blank" rel="noreferrer">github <span>→</span></a>
                 </div>
               </div>
 
