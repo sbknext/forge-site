@@ -32,6 +32,20 @@ export default function HomePage() {
             <a href="#install">install</a>
             <a href="#gallery">agents</a>
             <a href="#built">built with</a>
+            <a
+              href="https://mcp.sbknext.com"
+              target="_blank"
+              rel="noreferrer"
+              style={{
+                background: 'var(--ember-faint)',
+                border: '1px solid rgba(255,122,26,0.45)',
+                color: 'var(--ember)',
+                borderRadius: 999,
+                padding: '3px 12px',
+                fontWeight: 600,
+                letterSpacing: '0.02em',
+              }}
+            >mcp.sbknext.com →</a>
             <a href="https://github.com/sbknext/forge-client" target="_blank" rel="noreferrer">github ↗</a>
           </nav>
           <a className="nav-cta" href="#install">$ install</a>
@@ -48,6 +62,31 @@ export default function HomePage() {
               <span className="bracket">[</span>
               <span>forge v3 · agent orchestration runtime</span>
               <span className="bracket">]</span>
+            </div>
+
+            {/* MCP redirect banner */}
+            <div style={{ marginBottom: 20 }}>
+              <a
+                href="https://mcp.sbknext.com"
+                target="_blank"
+                rel="noreferrer"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 8,
+                  border: '1px solid rgba(255,122,26,0.4)',
+                  borderRadius: 999,
+                  padding: '5px 14px',
+                  fontFamily: 'var(--mono)',
+                  fontSize: 12,
+                  color: 'var(--ember)',
+                  background: 'var(--ember-faint)',
+                  textDecoration: 'none',
+                }}
+              >
+                <span style={{ opacity: 0.7, fontSize: 11 }}>SDK + MCP server?</span>
+                <span>→ mcp.sbknext.com</span>
+              </a>
             </div>
 
             <h1>
@@ -238,7 +277,13 @@ export default function HomePage() {
             <div className="section-head">
               <span className="eyebrow"><span className="bracket">/</span> architecture <span className="bracket">/</span></span>
               <h2>One brain. Four hands.<br />Any model.</h2>
-              <p>Forge brain holds task state and dispatches sub-agents in parallel. Each agent picks its own provider — Anthropic, OpenAI, local Ollama — and streams back. You see every token.</p>
+              <p>
+                Forge brain holds task state and dispatches sub-agents in parallel. Each agent picks its own provider — Anthropic, OpenAI, local Ollama — and streams back. You see every token.
+                <br /><br />
+                <span style={{ fontFamily: 'var(--mono)', fontSize: 12, color: 'var(--text-3)' }}>
+                  Your code calls <span style={{ color: 'var(--ember)' }}>forge-client</span> (SDK). The SDK talks to <span style={{ color: 'var(--ember)' }}>forge-mcp</span> (self-host, MIT) or <span style={{ color: 'var(--ember)' }}>Forge Cloud</span> (hosted at <a href="https://mcp.sbknext.com" target="_blank" rel="noreferrer" style={{ color: 'var(--ember)', borderBottom: '1px dashed rgba(255,122,26,0.4)' }}>mcp.sbknext.com</a>). Same protocol either way.
+                </span>
+              </p>
             </div>
 
             <div className="arch-stage">
@@ -386,91 +431,85 @@ export default function HomePage() {
           <div className="container">
             <div className="section-head">
               <span className="eyebrow"><span className="bracket">/</span> install <span className="bracket">/</span></span>
-              <h2>One line. Four agents online.</h2>
-              <p>
-                Forge runs locally. Bring your own API keys, or point it at Ollama and run offline.
-                Persistent state lives in{' '}
-                <code style={{ fontFamily: 'var(--mono)', color: 'var(--ember)' }}>.forge/</code>.
-              </p>
+              <h2>Install in your language.</h2>
+              <p>Three runtimes — same brain.</p>
             </div>
 
-            {/* Install tabs */}
-            <div className="install-side">
-              <div className="terminal">
-                <div className="terminal-bar">
-                  <div className="tb-dots"><span /><span /><span /></div>
-                  <div className="tb-title">~/code/forge — zsh · forge run</div>
-                  <div style={{ fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--text-3)' }}>120×30</div>
-                </div>
-                <div className="terminal-body" id="install-term" />
+            <div style={{
+              background: 'var(--surface-1)',
+              border: '1px solid var(--border)',
+              borderRadius: 10,
+              padding: '28px 32px',
+              maxWidth: 640,
+              margin: '0 auto',
+            }}>
+              <p style={{ color: 'var(--text-2)', lineHeight: 1.75, marginBottom: 18, fontSize: 14.5 }}>
+                The full install + signup flow lives at{' '}
+                <a href="https://mcp.sbknext.com" target="_blank" rel="noreferrer"
+                  style={{ color: 'var(--ember)', borderBottom: '1px dashed rgba(255,122,26,0.4)', fontWeight: 600 }}>
+                  mcp.sbknext.com
+                </a>{' '}
+                — that&apos;s where you get a token, see Claude Desktop / Cursor / VS Code configs, and
+                choose between self-hosting <code style={{ fontFamily: 'var(--mono)', color: 'var(--ember)', fontSize: 12 }}>forge-mcp</code> (free, MIT) or Forge Cloud (hosted, preview).
+              </p>
+
+              <div style={{ fontFamily: 'var(--mono)', fontSize: 11.5, color: 'var(--text-3)', marginBottom: 12, textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+                Quick reference — SDK only
               </div>
 
-              <aside className="install-side-info">
-                <div style={{ fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--text-3)', textTransform: 'uppercase', letterSpacing: '0.12em' }}>
-                  install
+              {/* Python */}
+              <div style={{ marginBottom: 10 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
+                  <span style={{ fontFamily: 'var(--mono)', fontSize: 10, color: 'var(--ember)', letterSpacing: '0.08em' }}>Python ≥ 3.9</span>
+                  <span style={{ fontFamily: 'var(--mono)', fontSize: 9, color: 'var(--ember)', background: 'rgba(255,122,26,0.1)', border: '1px solid rgba(255,122,26,0.25)', borderRadius: 4, padding: '1px 5px' }}>live on PyPI</span>
                 </div>
+                <code style={{ display: 'block', fontFamily: 'var(--mono)', fontSize: 12, color: 'var(--text-1)', background: 'var(--surface-2)', padding: '7px 12px', borderRadius: 6 }}>
+                  pip install sbknext-forge
+                </code>
+              </div>
 
-                {/* Node */}
-                <div style={{ marginTop: 14 }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
-                    <span style={{ fontFamily: 'var(--mono)', fontSize: 10, color: '#6ee7b7', letterSpacing: '0.08em' }}>Node.js &ge; 18</span>
-                    <span style={{ fontFamily: 'var(--mono)', fontSize: 9, color: '#6ee7b7', background: 'rgba(110,231,183,0.1)', border: '1px solid rgba(110,231,183,0.25)', borderRadius: 4, padding: '1px 5px', letterSpacing: '0.06em' }}>live on npm</span>
-                  </div>
-                  <code style={{ display: 'block', fontFamily: 'var(--mono)', fontSize: 11.5, color: 'var(--text-1)', background: 'var(--surface-1)', padding: '6px 10px', borderRadius: 5, wordBreak: 'break-all' }}>
-                    npm install @sbkolate/forge
-                  </code>
+              {/* Node */}
+              <div style={{ marginBottom: 10 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
+                  <span style={{ fontFamily: 'var(--mono)', fontSize: 10, color: '#6ee7b7', letterSpacing: '0.08em' }}>Node.js ≥ 18</span>
+                  <span style={{ fontFamily: 'var(--mono)', fontSize: 9, color: '#6ee7b7', background: 'rgba(110,231,183,0.1)', border: '1px solid rgba(110,231,183,0.25)', borderRadius: 4, padding: '1px 5px' }}>live on npm</span>
                 </div>
+                <code style={{ display: 'block', fontFamily: 'var(--mono)', fontSize: 12, color: 'var(--text-1)', background: 'var(--surface-2)', padding: '7px 12px', borderRadius: 6 }}>
+                  npm install @sbkolate/forge
+                </code>
+              </div>
 
-                {/* Rust */}
-                <div style={{ marginTop: 10 }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
-                    <span style={{ fontFamily: 'var(--mono)', fontSize: 10, color: '#c4a6f8', letterSpacing: '0.08em' }}>Rust (Cargo.toml)</span>
-                    <span style={{ fontFamily: 'var(--mono)', fontSize: 9, color: 'var(--text-3)', background: 'rgba(161,161,166,0.08)', border: '1px solid rgba(161,161,166,0.2)', borderRadius: 4, padding: '1px 5px', letterSpacing: '0.06em' }}>crates.io coming soon</span>
-                  </div>
-                  <code style={{ display: 'block', fontFamily: 'var(--mono)', fontSize: 11.5, color: 'var(--text-1)', background: 'var(--surface-1)', padding: '6px 10px', borderRadius: 5, wordBreak: 'break-all' }}>
-                    sbknext-forge = &quot;0.1&quot;
-                  </code>
+              {/* Rust */}
+              <div style={{ marginBottom: 24 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
+                  <span style={{ fontFamily: 'var(--mono)', fontSize: 10, color: '#c4a6f8', letterSpacing: '0.08em' }}>Rust</span>
+                  <span style={{ fontFamily: 'var(--mono)', fontSize: 9, color: 'var(--text-3)', background: 'rgba(161,161,166,0.08)', border: '1px solid rgba(161,161,166,0.2)', borderRadius: 4, padding: '1px 5px' }}>coming soon on crates.io</span>
                 </div>
+                <code style={{ display: 'block', fontFamily: 'var(--mono)', fontSize: 12, color: 'var(--text-3)', background: 'var(--surface-2)', padding: '7px 12px', borderRadius: 6, opacity: 0.6 }}>
+                  sbknext-forge = &quot;0.1&quot;  &nbsp;# crates.io coming soon
+                </code>
+              </div>
 
-                {/* Python */}
-                <div style={{ marginTop: 10 }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
-                    <span style={{ fontFamily: 'var(--mono)', fontSize: 10, color: 'var(--ember)', letterSpacing: '0.08em' }}>Python &ge; 3.9</span>
-                    <span style={{ fontFamily: 'var(--mono)', fontSize: 9, color: 'var(--ember)', background: 'rgba(245,158,11,0.1)', border: '1px solid rgba(245,158,11,0.25)', borderRadius: 4, padding: '1px 5px', letterSpacing: '0.06em' }}>live on PyPI</span>
-                  </div>
-                  <code style={{ display: 'block', fontFamily: 'var(--mono)', fontSize: 11.5, color: 'var(--text-1)', background: 'var(--surface-1)', padding: '6px 10px', borderRadius: 5, wordBreak: 'break-all' }}>
-                    pip install sbknext-forge
-                  </code>
-                </div>
-
-                <div style={{ marginTop: 12, fontFamily: 'var(--mono)', fontSize: 10.5, color: 'var(--text-3)', lineHeight: 1.6 }}>
-                  <a href="https://github.com/sbknext/forge-client" style={{ color: 'var(--ember)', borderBottom: '1px dashed var(--ember-dim)' }}>
-                    github.com/sbknext/forge-client &rarr;
-                  </a>
-                </div>
-
-                <div style={{ marginTop: 16 }}>
-                  <div style={{ fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--text-3)', textTransform: 'uppercase', letterSpacing: '0.12em' }}>
-                    requirements
-                  </div>
-                  <ul style={{ listStyle: 'none', marginTop: 10, display: 'flex', flexDirection: 'column', gap: 6, fontFamily: 'var(--mono)', fontSize: 12 }}>
-                    <li>· macOS 13+ <span style={{ color: 'var(--text-3)' }}>/ Linux glibc 2.28+</span></li>
-                    <li>· git <span style={{ color: 'var(--text-3)' }}>2.40+</span></li>
-                    <li>· optional · <span style={{ color: 'var(--ember)' }}>$ANTHROPIC_API_KEY</span></li>
-                    <li>· optional · <span style={{ color: 'var(--ember)' }}>$OPENAI_API_KEY</span></li>
-                    <li>· optional · ollama <span style={{ color: 'var(--text-3)' }}>(offline mode)</span></li>
-                  </ul>
-                </div>
-
-                <div className="platform-row" style={{ marginTop: 14 }}>
-                  <span className="platform-chip"><span className="dot" />macOS arm64</span>
-                  <span className="platform-chip"><span className="dot" />macOS x64</span>
-                  <span className="platform-chip"><span className="dot" />linux x64</span>
-                  <span className="platform-chip" style={{ color: 'var(--text-3)' }}>
-                    <span className="dot" style={{ background: 'var(--amber)' }} />windows · soon
-                  </span>
-                </div>
-              </aside>
+              <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+                <a
+                  href="https://mcp.sbknext.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-primary"
+                  style={{ fontSize: 13, padding: '8px 18px' }}
+                >
+                  Get a token → mcp.sbknext.com
+                </a>
+                <a
+                  href="https://github.com/sbknext/corebrain"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-ghost"
+                  style={{ fontSize: 13, padding: '8px 18px' }}
+                >
+                  Self-host → github.com/sbknext/corebrain
+                </a>
+              </div>
             </div>
           </div>
         </section>
@@ -566,7 +605,10 @@ export default function HomePage() {
               <div className="product-card">
                 <div className="head">
                   <div className="pmark" style={{ color: '#ff7a1a' }}>E</div>
-                  <div><div className="pname">Echo AI</div></div>
+                  <div>
+                    <div className="pname">Echo AI</div>
+                    <div style={{ fontFamily: 'var(--mono)', fontSize: 9, color: '#6ee7b7', background: 'rgba(110,231,183,0.1)', border: '1px solid rgba(110,231,183,0.25)', borderRadius: 4, padding: '1px 6px', display: 'inline-block', marginTop: 2 }}>live</div>
+                  </div>
                   <div className="meta"><span className="dot" />live</div>
                 </div>
                 <div className="desc">Voice-to-action assistant. Speak, and Echo dispatches a Forge agent to do the work.</div>
@@ -590,17 +632,20 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* Brain MCP */}
+              {/* Forge MCP */}
               <div className="product-card">
                 <div className="head">
                   <div className="pmark" style={{ color: '#c4a6f8' }}>B</div>
-                  <div><div className="pname">Brain MCP</div></div>
+                  <div>
+                    <div className="pname">Forge MCP</div>
+                    <div style={{ fontFamily: 'var(--mono)', fontSize: 9, color: '#c4a6f8', background: 'rgba(196,166,248,0.1)', border: '1px solid rgba(196,166,248,0.25)', borderRadius: 4, padding: '1px 6px', display: 'inline-block', marginTop: 2 }}>now part of the Forge ecosystem · mcp.sbknext.com</div>
+                  </div>
                   <div className="meta"><span className="dot" />live</div>
                 </div>
                 <div className="desc">Long-term memory protocol. The shared substrate every Forge agent reads + writes.</div>
                 <div className="tail">
                   <span className="stat"><span className="ember">●</span> 41 memories · 5 projects · self-hosted</span>
-                  <a className="link" href="https://mcp.sbknext.com" target="_blank" rel="noreferrer">docs <span>→</span></a>
+                  <a className="link" href="https://mcp.sbknext.com" target="_blank" rel="noreferrer">mcp.sbknext.com <span>→</span></a>
                 </div>
               </div>
 
@@ -608,7 +653,10 @@ export default function HomePage() {
               <div className="product-card">
                 <div className="head">
                   <div className="pmark" style={{ color: '#60a5fa' }}>F</div>
-                  <div><div className="pname">claude-fuse</div></div>
+                  <div>
+                    <div className="pname">claude-fuse</div>
+                    <div style={{ fontFamily: 'var(--mono)', fontSize: 9, color: '#60a5fa', background: 'rgba(96,165,250,0.1)', border: '1px solid rgba(96,165,250,0.25)', borderRadius: 4, padding: '1px 6px', display: 'inline-block', marginTop: 2 }}>MIT</div>
+                  </div>
                   <div className="meta"><span className="dot" />live</div>
                 </div>
                 <div className="desc">Filesystem MCP that lets Claude mount your repo. Read, write, watch — with policy.</div>
@@ -622,7 +670,10 @@ export default function HomePage() {
               <div className="product-card" style={{ borderColor: 'rgba(255,122,26,0.3)' }}>
                 <div className="head">
                   <div className="pmark" style={{ color: '#ff7a1a', borderColor: 'rgba(255,122,26,0.4)', background: 'var(--ember-faint)' }}>⬢</div>
-                  <div><div className="pname">Forge</div></div>
+                  <div>
+                    <div className="pname">Forge</div>
+                    <div style={{ fontFamily: 'var(--mono)', fontSize: 9, color: 'var(--ember)', background: 'var(--ember-faint)', border: '1px solid rgba(255,122,26,0.3)', borderRadius: 4, padding: '1px 6px', display: 'inline-block', marginTop: 2 }}>self-hosting · v0.4.3</div>
+                  </div>
                   <div className="meta"><span className="dot" />live · self-hosted</div>
                 </div>
                 <div className="desc">This thing. Forge ships Forge. Every commit reviewed + tested + deployed by Forge.</div>
@@ -653,6 +704,67 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* ── TWO WAYS TO RUN ── */}
+        <section id="ecosystem" className="reveal">
+          <div className="container">
+            <div className="section-head">
+              <span className="eyebrow"><span className="bracket">[</span> ECOSYSTEM <span className="bracket">]</span></span>
+              <h2>Two ways to run Forge.</h2>
+              <p>One protocol. One SDK. Same agent code.</p>
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20, maxWidth: 760, margin: '0 auto' }}>
+              {/* OSS card */}
+              <div style={{
+                background: 'var(--surface-1)',
+                border: '1px solid var(--border)',
+                borderRadius: 10,
+                padding: '24px 26px',
+              }}>
+                <div style={{ fontFamily: 'var(--mono)', fontSize: 10, color: 'var(--text-3)', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: 10 }}>Option 1</div>
+                <div style={{ fontSize: 17, fontWeight: 700, color: 'var(--text-1)', marginBottom: 6 }}>forge-mcp <span style={{ fontFamily: 'var(--mono)', fontSize: 11, color: '#6ee7b7', background: 'rgba(110,231,183,0.1)', border: '1px solid rgba(110,231,183,0.25)', borderRadius: 4, padding: '1px 6px', marginLeft: 6 }}>OSS</span></div>
+                <div style={{ fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--ember)', marginBottom: 10 }}>Open source · MIT · Apache-2.0</div>
+                <p style={{ color: 'var(--text-3)', fontSize: 13.5, lineHeight: 1.65, marginBottom: 16 }}>
+                  Self-host on your machine. SQLite + local embeddings. No data leaves your box.
+                </p>
+                <a
+                  href="https://github.com/sbknext/corebrain"
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ fontFamily: 'var(--mono)', fontSize: 12, color: 'var(--ember)', borderBottom: '1px dashed rgba(255,122,26,0.4)', textDecoration: 'none' }}
+                >
+                  github.com/sbknext/corebrain →
+                </a>
+                <div style={{ fontFamily: 'var(--mono)', fontSize: 10.5, color: 'var(--text-4)', marginTop: 8 }}>(public flip soon)</div>
+              </div>
+
+              {/* Cloud card */}
+              <div style={{
+                background: 'var(--surface-1)',
+                border: '1px solid rgba(255,122,26,0.35)',
+                borderRadius: 10,
+                padding: '24px 26px',
+              }}>
+                <div style={{ fontFamily: 'var(--mono)', fontSize: 10, color: 'var(--text-3)', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: 10 }}>Option 2</div>
+                <div style={{ fontSize: 17, fontWeight: 700, color: 'var(--text-1)', marginBottom: 6 }}>Forge Cloud <span style={{ fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--ember)', background: 'var(--ember-faint)', border: '1px solid rgba(255,122,26,0.3)', borderRadius: 4, padding: '1px 6px', marginLeft: 6 }}>preview</span></div>
+                <div style={{ fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--ember)', marginBottom: 10 }}>Hosted MCP endpoint · cb.sbknext.com/mcp</div>
+                <p style={{ color: 'var(--text-3)', fontSize: 13.5, lineHeight: 1.65, marginBottom: 16 }}>
+                  Postgres + pgvector + shared communities. Free token via signup.
+                </p>
+                <a
+                  href="https://mcp.sbknext.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ fontFamily: 'var(--mono)', fontSize: 12, color: 'var(--ember)', borderBottom: '1px dashed rgba(255,122,26,0.4)', textDecoration: 'none', fontWeight: 600 }}
+                >
+                  mcp.sbknext.com →
+                </a>
+                <div style={{ fontFamily: 'var(--mono)', fontSize: 10.5, color: 'var(--text-4)', marginTop: 8 }}>(preview · free token via signup)</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
       </main>
 
       {/* ── FOOTER ── */}
@@ -663,6 +775,7 @@ export default function HomePage() {
             <span className="glow-forge">Forge</span>
           </div>
           <div className="links">
+            <a href="https://mcp.sbknext.com" target="_blank" rel="noreferrer" style={{ color: 'var(--ember)', fontWeight: 600 }}>mcp.sbknext.com</a>
             <a href="https://github.com/sbknext/forge-client" target="_blank" rel="noreferrer">github</a>
             <a href="#install">install</a>
             <a href="#architecture">docs</a>
