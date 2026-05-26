@@ -115,6 +115,19 @@ export default function HomePage() {
               <a className="btn-ghost" href="#architecture">
                 <span style={{ opacity: 0.6 }}>$</span> how it works
               </a>
+              <a
+                className="btn-ghost"
+                href="https://mcp.sbknext.com"
+                target="_blank"
+                rel="noreferrer"
+                style={{
+                  border: '1px solid rgba(255,122,26,0.5)',
+                  color: 'var(--ember)',
+                  fontWeight: 600,
+                }}
+              >
+                Use Forge MCP <span className="arr">→</span>
+              </a>
             </div>
 
             {/* Live agent network */}
