@@ -696,6 +696,23 @@ export default function HomePage() {
                 </div>
               </div>
 
+              {/* Sutra */}
+              <div className="product-card">
+                <div className="head">
+                  <div className="pmark" style={{ color: '#6ee7b7' }}>S</div>
+                  <div>
+                    <div className="pname">Sutra</div>
+                    <div style={{ fontFamily: 'var(--mono)', fontSize: 9, color: '#6ee7b7', background: 'rgba(110,231,183,0.1)', border: '1px solid rgba(110,231,183,0.25)', borderRadius: 4, padding: '1px 6px', display: 'inline-block', marginTop: 2 }}>MIT</div>
+                  </div>
+                  <div className="meta"><span className="dot" />live</div>
+                </div>
+                <div className="desc">Static structural graph for any JS/TS repo. Scan → flow graph + drift checks: orphaned endpoints, dead imports, dangling tests.</div>
+                <div className="tail">
+                  <span className="stat"><span className="ember">●</span> MIT · Phase 0</span>
+                  <a className="link" href="https://github.com/sbknext/forge-sutra" target="_blank" rel="noreferrer">github <span>→</span></a>
+                </div>
+              </div>
+
               {/* Your project */}
               <div className="product-card dashed-tile" style={{ backgroundColor: 'transparent', color: 'var(--text-3)' }}>
                 <div className="head">
