@@ -33,6 +33,7 @@ export default function HomePage() {
             <a href="#install">install</a>
             <a href="#gallery">agents</a>
             <a href="#built">built with</a>
+            <a href="#roadmap">roadmap</a>
             <a
               href="https://mcp.sbknext.com"
               target="_blank"
@@ -805,6 +806,64 @@ export default function HomePage() {
                 </a>
                 <div style={{ fontFamily: 'var(--mono)', fontSize: 10.5, color: 'var(--text-4)', marginTop: 8 }}>(preview · free token via signup)</div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── ROADMAP ── */}
+        <section id="roadmap" className="reveal">
+          <div className="container">
+            <div className="section-head">
+              <span className="eyebrow"><span className="bracket">[</span> ROADMAP <span className="bracket">]</span></span>
+              <h2>Shipped. Building.<br />Next.</h2>
+              <p>Honest status — only what&apos;s real. No fake dates, no vapourware. Built in public, one milestone at a time.</p>
+            </div>
+
+            <div className="roadmap">
+              {/* SHIPPED */}
+              <div className="rm-col">
+                <div className="rm-col-head">
+                  <span className="rm-badge shipped"><span className="dot" /> shipped · live now</span>
+                </div>
+                <ul className="rm-list">
+                  <li><b>Forge v0.4.3</b> — agent orchestration runtime, self-hosting, live at forge.sbknext.com.</li>
+                  <li><b>forge SDK</b> — <code>pip install sbknext-forge</code> · <code>npm @sbkolate/forge</code>. Both live on PyPI + npm.</li>
+                  <li><b>Brain MCP</b> — hosted memory protocol at mcp.sbknext.com. Per-user isolated, self-hostable.</li>
+                  <li><b>Echo AI</b> — consumer AI wellness (Ayurveda-informed), live at echo.sbknext.com. Try the hero demo.</li>
+                  <li><b>claude-fuse</b> — MIT, local-first observability for Claude Code sessions.</li>
+                  <li><b>Sutra</b> — MIT, static structural code-graph + drift checks. Open source on GitHub.</li>
+                </ul>
+              </div>
+
+              {/* BUILDING */}
+              <div className="rm-col">
+                <div className="rm-col-head">
+                  <span className="rm-badge building"><span className="dot" /> building now</span>
+                </div>
+                <ul className="rm-list">
+                  <li><b>Forge Cloud</b> — hosted MCP endpoint, preview. Postgres + pgvector + shared communities.</li>
+                  <li><b>Forge Secure</b> — security scanner (gitleaks + osv + semgrep) → masked findings + CI gate. Private, in active dev.</li>
+                  <li><b>Sutra feature viewer</b> — interactive flow + health dashboard; Python/Frappe parity.</li>
+                  <li><b>Autonomous SDLC</b> — planner → executor → verify loop; mistake-ledger driven. Manual today, automating the orchestrator.</li>
+                </ul>
+              </div>
+
+              {/* NEXT */}
+              <div className="rm-col">
+                <div className="rm-col-head">
+                  <span className="rm-badge next"><span className="dot" /> next · exploring</span>
+                </div>
+                <ul className="rm-list">
+                  <li><b>Self-evolving harness</b> — agents that critique + rewrite their own rules against evals.</li>
+                  <li><b>Rust SDK</b> — <code>crates.io</code> publish (Python + Node already live).</li>
+                  <li><b>Forge Secure dashboard</b> — severity cards, drill-down, trend-over-time.</li>
+                  <li><b>Public OSS flip</b> — corebrain / forge-mcp self-host repos going public.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="rm-foot">
+              <span className="ember">●</span> Status is honest, not aspirational — if it says <b>shipped</b>, it&apos;s live and you can use it today. Watch this page; it changes as things ship.
             </div>
           </div>
         </section>
