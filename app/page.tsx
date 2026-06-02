@@ -638,7 +638,7 @@ export default function HomePage() {
                   </div>
                   <div className="meta"><span className="dot" />live</div>
                 </div>
-                <div className="desc">Voice-to-action assistant. Speak, and Echo dispatches a Forge agent to do the work.</div>
+                <div className="desc">Consumer AI wellness assistant — Ayurveda-informed, multi-provider routing. Try the live demo in the hero.</div>
                 <div className="tail">
                   <span className="stat"><span className="ember">●</span> live since Apr 2026</span>
                   <a className="link" href="https://echo.sbknext.com" target="_blank" rel="noreferrer">open <span>→</span></a>
@@ -654,7 +654,7 @@ export default function HomePage() {
                 </div>
                 <div className="desc">Safe-pace LinkedIn engagement. Tag-search + 30 likes/day, real Chrome session.</div>
                 <div className="tail">
-                  <span className="stat"><span className="ember">●</span> cargo install forge-linkedin</span>
+                  <span className="stat"><span className="ember">●</span> open source · Rust</span>
                   <a className="link" href="https://github.com/sbknext/forge-linkedin" target="_blank" rel="noreferrer">github <span>→</span></a>
                 </div>
               </div>
@@ -671,7 +671,7 @@ export default function HomePage() {
                 </div>
                 <div className="desc">Long-term memory protocol. The shared substrate every Forge agent reads + writes.</div>
                 <div className="tail">
-                  <span className="stat"><span className="ember">●</span> 41 memories · 5 projects · self-hosted</span>
+                  <span className="stat"><span className="ember">●</span> live · self-hosted · per-user isolated</span>
                   <a className="link" href="https://mcp.sbknext.com" target="_blank" rel="noreferrer">mcp.sbknext.com <span>→</span></a>
                 </div>
               </div>
