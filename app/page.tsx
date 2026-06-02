@@ -5,6 +5,7 @@ import {
   GalleryClient,
   ScrollRevealClient,
 } from '@/components/ForgeAnimations';
+import EchoDemo from '@/components/EchoDemo';
 
 export default function HomePage() {
   return (
@@ -58,79 +59,92 @@ export default function HomePage() {
         <section className="hero" id="hero">
           <div className="hero-grid-bg" />
           <div className="container">
-            <div className="eyebrow">
-              <span className="bracket">[</span>
-              <span>forge v3 · agent orchestration runtime</span>
-              <span className="bracket">]</span>
-            </div>
+            {/* Two-column hero: left = content, right = Echo demo */}
+            <div className="hero-two-col">
 
-            {/* MCP redirect banner */}
-            <div style={{ marginBottom: 20 }}>
-              <a
-                href="https://mcp.sbknext.com"
-                target="_blank"
-                rel="noreferrer"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: 8,
-                  border: '1px solid rgba(255,122,26,0.4)',
-                  borderRadius: 999,
-                  padding: '5px 14px',
-                  fontFamily: 'var(--mono)',
-                  fontSize: 12,
-                  color: 'var(--ember)',
-                  background: 'var(--ember-faint)',
-                  textDecoration: 'none',
-                }}
-              >
-                <span style={{ opacity: 0.7, fontSize: 11 }}>SDK + MCP server?</span>
-                <span>→ mcp.sbknext.com</span>
-              </a>
-            </div>
+              {/* ── LEFT COLUMN ── */}
+              <div className="hero-left">
+                <div className="eyebrow">
+                  <span className="bracket">[</span>
+                  <span>forge v3 · agent orchestration runtime</span>
+                  <span className="bracket">]</span>
+                </div>
 
-            <h1>
-              Solo devs ship<br />
-              like <span className="ember">teams</span>.
-            </h1>
+                {/* MCP redirect banner */}
+                <div style={{ marginBottom: 20 }}>
+                  <a
+                    href="https://mcp.sbknext.com"
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: 8,
+                      border: '1px solid rgba(255,122,26,0.4)',
+                      borderRadius: 999,
+                      padding: '5px 14px',
+                      fontFamily: 'var(--mono)',
+                      fontSize: 12,
+                      color: 'var(--ember)',
+                      background: 'var(--ember-faint)',
+                      textDecoration: 'none',
+                    }}
+                  >
+                    <span style={{ opacity: 0.7, fontSize: 11 }}>SDK + MCP server?</span>
+                    <span>→ mcp.sbknext.com</span>
+                  </a>
+                </div>
 
-            <p className="hero-sub">
-              You give Forge an intent. It spawns four sub-agents that review, test, write,
-              and ship — in parallel, on your machine, with full context. You stay in the loop.
-            </p>
+                <h1>
+                  Solo devs ship<br />
+                  like <span className="ember">teams</span>.
+                </h1>
 
-            {/* Stats row — honest, no fake counters */}
-            <div className="hero-meta">
-              <span className="chip"><span>1 dev</span></span>
-              <span className="arr">→</span>
-              <span className="chip"><span className="num">4</span><span>agents</span></span>
-              <span className="arr">→</span>
-              <span className="chip"><span>shipping today</span></span>
-            </div>
+                <p className="hero-sub">
+                  You give Forge an intent. It spawns four sub-agents that review, test, write,
+                  and ship — in parallel, on your machine, with full context. You stay in the loop.
+                </p>
 
-            <div className="hero-cta-row">
-              <a className="btn-primary" href="#install">
-                Watch a run <span className="arr">→</span>
-              </a>
-              <a className="btn-ghost" href="#architecture">
-                <span style={{ opacity: 0.6 }}>$</span> how it works
-              </a>
-              <a
-                className="btn-ghost"
-                href="https://mcp.sbknext.com"
-                target="_blank"
-                rel="noreferrer"
-                style={{
-                  border: '1px solid rgba(255,122,26,0.5)',
-                  color: 'var(--ember)',
-                  fontWeight: 600,
-                }}
-              >
-                Use Forge MCP <span className="arr">→</span>
-              </a>
-            </div>
+                {/* Stats row — honest, no fake counters */}
+                <div className="hero-meta">
+                  <span className="chip"><span>1 dev</span></span>
+                  <span className="arr">→</span>
+                  <span className="chip"><span className="num">4</span><span>agents</span></span>
+                  <span className="arr">→</span>
+                  <span className="chip"><span>shipping today</span></span>
+                </div>
 
-            {/* Live agent network */}
+                <div className="hero-cta-row">
+                  <a className="btn-primary" href="#install">
+                    Watch a run <span className="arr">→</span>
+                  </a>
+                  <a className="btn-ghost" href="#architecture">
+                    <span style={{ opacity: 0.6 }}>$</span> how it works
+                  </a>
+                  <a
+                    className="btn-ghost"
+                    href="https://mcp.sbknext.com"
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{
+                      border: '1px solid rgba(255,122,26,0.5)',
+                      color: 'var(--ember)',
+                      fontWeight: 600,
+                    }}
+                  >
+                    Use Forge MCP <span className="arr">→</span>
+                  </a>
+                </div>
+              </div>{/* end hero-left */}
+
+              {/* ── RIGHT COLUMN — Echo demo ── */}
+              <div className="hero-right">
+                <EchoDemo />
+              </div>
+
+            </div>{/* end hero-two-col */}
+
+            {/* Live agent network (full width below the two-col) */}
             <div className="agent-network">
               <div className="agent-network-label">
                 <span>live · agent network</span>
