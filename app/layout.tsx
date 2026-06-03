@@ -37,6 +37,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
           rel="stylesheet"
         />
+        {/* Google Analytics 4 (sbknext.com - GA4) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-2SJY4X6ZQC" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2SJY4X6ZQC');`,
+          }}
+        />
       </head>
       <body style={{ fontFamily: "var(--sans)", WebkitFontSmoothing: 'antialiased' }}>
         {children}
