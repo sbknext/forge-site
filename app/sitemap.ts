@@ -12,5 +12,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: 'https://forge.sbknext.com/#gallery', lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     { url: 'https://forge.sbknext.com/#built', lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     { url: 'https://forge.sbknext.com/#roadmap', lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    { url: 'https://forge.sbknext.com/roadmap', lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
   ];
 }

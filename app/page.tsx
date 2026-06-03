@@ -33,7 +33,7 @@ export default function HomePage() {
             <a href="#install">install</a>
             <a href="#gallery">agents</a>
             <a href="#built">built with</a>
-            <a href="#roadmap">roadmap</a>
+            <a href="/roadmap">roadmap</a>
             <a
               href="https://mcp.sbknext.com"
               target="_blank"

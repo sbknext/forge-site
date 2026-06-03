@@ -848,6 +848,486 @@ footer { border-top: 1px solid var(--border); padding: 40px 0 60px; margin-top: 
 }
 
 /* ============================================================
+   /roadmap page
+   ============================================================ */
+
+/* .rm-badge.planned — muted gray outline (adds to existing shipped/building/next) */
+.rm-badge.planned {
+  color: var(--text-4);
+  background: rgba(70, 70, 74, 0.08);
+  border: 1px solid rgba(70, 70, 74, 0.3);
+}
+.rm-badge.planned .dot { background: var(--text-4); }
+
+/* Hero */
+.rdm-hero {
+  padding: 96px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+.rdm-h1 {
+  font-size: clamp(36px, 5.5vw, 60px);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  margin-top: 16px;
+  text-wrap: balance;
+}
+.rdm-subtitle {
+  margin-top: 18px;
+  color: var(--text-2);
+  font-size: clamp(15px, 1.6vw, 17px);
+  max-width: 52ch;
+  line-height: 1.6;
+}
+
+/* Vision paragraph */
+.rdm-vision-para {
+  font-size: 16px;
+  color: var(--text-2);
+  line-height: 1.75;
+  max-width: 70ch;
+  border-left: 3px solid var(--ember);
+  padding-left: 20px;
+}
+
+/* ── Brain diagram ── */
+.rdm-brain-diagram {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 32px 28px;
+  overflow: hidden;
+  position: relative;
+}
+.rdm-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex-shrink: 0;
+  min-width: 0;
+}
+.rdm-input-node {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 14px;
+  background: var(--surface-2);
+  border: 1px solid var(--border-bright);
+  border-radius: 8px;
+  min-width: 130px;
+  transition: border-color .2s;
+}
+.rdm-input-node:hover { border-color: rgba(255,122,26,0.4); }
+.rdm-input-label {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ember);
+}
+.rdm-input-desc {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text-3);
+  margin-top: 2px;
+}
+.rdm-arrows {
+  flex-shrink: 0;
+  width: 60px;
+}
+.rdm-arrows-svg {
+  width: 60px;
+  height: 120px;
+  overflow: visible;
+}
+.rdm-brain-core {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,122,26,0.18) 0%, transparent 70%);
+  border: 1px solid rgba(255,122,26,0.35);
+  position: relative;
+}
+.rdm-brain-hex {
+  font-size: 40px;
+  color: var(--ember);
+  opacity: 0.25;
+  position: absolute;
+  line-height: 1;
+  animation: brain-halo 3.2s ease-in-out infinite;
+}
+.rdm-brain-label {
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ember);
+  letter-spacing: 0.1em;
+  position: relative;
+  z-index: 1;
+}
+.rdm-brain-sub {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--text-3);
+  margin-top: 2px;
+  position: relative;
+  z-index: 1;
+}
+.rdm-out-arrow {
+  flex-shrink: 0;
+  width: 48px;
+  display: flex;
+  align-items: center;
+}
+.rdm-out-arrow-svg { width: 48px; height: 24px; overflow: visible; }
+.rdm-outcome {
+  display: flex;
+  flex-direction: column;
+  padding: 14px 18px;
+  background: var(--ember-faint);
+  border: 1px solid rgba(255,122,26,0.3);
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+.rdm-outcome-text {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text-2);
+  line-height: 1.6;
+}
+
+/* ── Release train ── */
+.rdm-train {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+}
+.rdm-train-card {
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: border-color .2s, transform .2s;
+}
+.rdm-train-card:hover {
+  border-color: rgba(255,122,26,0.35);
+  transform: translateY(-2px);
+}
+.rdm-train-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+.rdm-train-version {
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ember);
+}
+.rdm-train-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-1);
+  letter-spacing: -0.01em;
+}
+.rdm-train-desc {
+  font-size: 12px;
+  color: var(--text-3);
+}
+.rdm-train-when {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text-4);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 2px;
+}
+.rdm-train-blurb {
+  font-size: 12.5px;
+  color: var(--text-2);
+  line-height: 1.55;
+  margin-top: 4px;
+}
+
+/* ── Per-release detail ── */
+.rdm-detail-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.rdm-detail-card {
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px 32px;
+}
+.rdm-detail-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+.rdm-detail-version {
+  font-family: var(--mono);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ember);
+  min-width: 44px;
+}
+.rdm-detail-name {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-1);
+  letter-spacing: -0.02em;
+}
+.rdm-detail-tagline {
+  font-size: 14.5px;
+  color: var(--text-2);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  border-left: 2px solid var(--ember);
+  padding-left: 14px;
+}
+.rdm-detail-tracks {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.rdm-track {
+  flex: 1;
+  min-width: 200px;
+}
+.rdm-track-name {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ember);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 10px;
+}
+.rdm-track-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.rdm-track-list li {
+  font-size: 13px;
+  color: var(--text-2);
+  line-height: 1.5;
+  padding-left: 14px;
+  position: relative;
+}
+.rdm-track-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--ember);
+  opacity: 0.6;
+}
+.rdm-gate {
+  margin-top: 18px;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--text-3);
+  border-top: 1px dashed var(--border-bright);
+  padding-top: 12px;
+  font-style: italic;
+}
+
+/* ── 12-month timeline ── */
+.rdm-timeline-wrap {
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+.rdm-tl-grid {
+  display: grid;
+  grid-template-columns: 80px repeat(12, 1fr);
+  gap: 0;
+  min-width: 640px;
+}
+.rdm-tl-label-col {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-3);
+  padding: 6px 8px 6px 0;
+  display: flex;
+  align-items: center;
+  border-right: 1px solid var(--border);
+  margin-right: 4px;
+  white-space: nowrap;
+}
+.rdm-tl-month-head {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text-4);
+  text-align: center;
+  padding: 6px 2px;
+  letter-spacing: 0.04em;
+}
+.rdm-tl-row {
+  border-top: 1px solid var(--border);
+}
+.rdm-tl-cell {
+  position: relative;
+  height: 32px;
+  padding: 4px 2px;
+}
+.rdm-tl-track-bg {
+  position: absolute;
+  inset: 6px 2px;
+  background: var(--surface-2);
+  border-radius: 3px;
+  opacity: 0.5;
+}
+.rdm-tl-seg {
+  position: absolute;
+  inset: 6px 0;
+  border-radius: 3px;
+  z-index: 1;
+}
+.rdm-tl-seg.thin {
+  top: 12px;
+  bottom: 12px;
+}
+.rdm-tl-seg-label {
+  position: absolute;
+  top: 50%;
+  left: 4px;
+  transform: translateY(-50%);
+  font-family: var(--mono);
+  font-size: 9px;
+  font-weight: 600;
+  white-space: nowrap;
+  z-index: 2;
+  text-shadow: 0 0 4px rgba(0,0,0,0.8);
+  pointer-events: none;
+}
+
+/* ── Repo table ── */
+.rdm-repo-table {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.rdm-repo-head {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 16px;
+  padding: 10px 18px;
+  background: var(--surface-2);
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-4);
+  border-bottom: 1px solid var(--border);
+}
+.rdm-repo-row {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 16px;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--border);
+  align-items: baseline;
+  transition: background .15s;
+}
+.rdm-repo-row:last-child { border-bottom: none; }
+.rdm-repo-row:hover { background: var(--surface-2); }
+.rdm-repo-name {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ember);
+  background: var(--ember-faint);
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+.rdm-repo-dest {
+  font-size: 13.5px;
+  color: var(--text-2);
+  line-height: 1.5;
+}
+
+/* ── Dream features ── */
+.rdm-dream-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.rdm-dream-card {
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 16px;
+  transition: border-color .2s, transform .2s;
+}
+.rdm-dream-card:hover {
+  border-color: rgba(255,122,26,0.25);
+  transform: translateY(-2px);
+}
+.rdm-dream-title {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-1);
+  margin-bottom: 6px;
+}
+.rdm-dream-blurb {
+  font-size: 12.5px;
+  color: var(--text-3);
+  line-height: 1.55;
+}
+
+/* ── Closing ── */
+.rdm-closing {
+  text-align: center;
+  padding: 40px 24px;
+}
+.rdm-closing-line {
+  font-size: 15px;
+  color: var(--text-2);
+  max-width: 56ch;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ── /roadmap responsive ── */
+@media (max-width: 880px) {
+  .rdm-brain-diagram { flex-wrap: wrap; gap: 16px; }
+  .rdm-arrows { display: none; }
+  .rdm-out-arrow { display: none; }
+  .rdm-train { grid-template-columns: repeat(3, 1fr); }
+  .rdm-dream-grid { grid-template-columns: repeat(2, 1fr); }
+  .rdm-repo-head,
+  .rdm-repo-row { grid-template-columns: 160px 1fr; }
+  .rdm-detail-card { padding: 20px; }
+}
+@media (max-width: 560px) {
+  .rdm-train { grid-template-columns: 1fr; }
+  .rdm-dream-grid { grid-template-columns: 1fr; }
+  .rdm-repo-head { display: none; }
+  .rdm-repo-row { grid-template-columns: 1fr; gap: 4px; }
+  .rdm-brain-diagram { padding: 20px 16px; }
+  .rdm-detail-tracks { flex-direction: column; }
+}
+
+/* ============================================================
    Reduced motion
    ============================================================ */
 @media (prefers-reduced-motion: reduce) {
