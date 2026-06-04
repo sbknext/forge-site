@@ -884,7 +884,7 @@ export default function HomePage() {
                   <li><b>Forge v0.4.3</b> — agent orchestration runtime, self-hosting, live at forge.sbknext.com.</li>
                   <li><b>forge SDK</b> — <code>pip install sbknext-forge</code> · <code>npm @sbknext/forge</code>. Both live on PyPI + npm.</li>
                   <li><b>Brain MCP</b> — hosted memory protocol at mcp.sbknext.com. Per-user isolated, self-hostable.</li>
-                  <li><b>Echo AI</b> — consumer AI wellness (Ayurveda-informed), live at echo.sbknext.com. Try the hero demo.</li>
+                  <li><b>Echo AI</b> — consumer AI assistant, live at echo.sbknext.com. Try the hero demo.</li>
                   <li><b>claude-fuse</b> — MIT, local-first observability for Claude Code sessions.</li>
                   <li><b>Sutra</b> — MIT, static structural code-graph + drift checks. Open source on GitHub.</li>
                 </ul>
