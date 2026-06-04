@@ -639,7 +639,7 @@ export default function HomePage() {
                   </div>
                   <div className="meta"><span className="dot" />live</div>
                 </div>
-                <div className="desc">Consumer AI wellness assistant — Ayurveda-informed, multi-provider routing. Try the live demo in the hero.</div>
+                <div className="desc">Consumer AI assistant — conversational chat, multi-provider routing. Try the live demo in the hero.</div>
                 <div className="tail">
                   <span className="stat"><span className="ember">●</span> live since Apr 2026</span>
                   <a className="link" href="https://echo.sbknext.com" target="_blank" rel="noreferrer">open <span>→</span></a>
@@ -725,6 +725,23 @@ export default function HomePage() {
                 <div className="tail">
                   <span className="stat"><span className="ember">●</span> MIT · Phase 0</span>
                   <a className="link" href="https://github.com/sbknext/forge-sutra" target="_blank" rel="noreferrer">github <span>→</span></a>
+                </div>
+              </div>
+
+              {/* Forge Secure */}
+              <div className="product-card">
+                <div className="head">
+                  <div className="pmark" style={{ color: '#f87171' }}>🛡</div>
+                  <div>
+                    <div className="pname">Forge Secure</div>
+                    <div style={{ fontFamily: 'var(--mono)', fontSize: 9, color: '#f87171', background: 'rgba(248,113,113,0.1)', border: '1px solid rgba(248,113,113,0.25)', borderRadius: 4, padding: '1px 6px', display: 'inline-block', marginTop: 2 }}>open source</div>
+                  </div>
+                  <div className="meta"><span className="dot" />live</div>
+                </div>
+                <div className="desc">Security scanner — gitleaks + osv + semgrep → masked, candidate-labelled findings + a CI gate. Built into the four-agent loop.</div>
+                <div className="tail">
+                  <span className="stat"><span className="ember">●</span> secrets + deps · CI gate</span>
+                  <a className="link" href="https://github.com/sbknext/forge-secure" target="_blank" rel="noreferrer">github <span>→</span></a>
                 </div>
               </div>
 
@@ -880,7 +897,7 @@ export default function HomePage() {
                 </div>
                 <ul className="rm-list">
                   <li><b>Forge Cloud</b> — hosted MCP endpoint, preview. Postgres + pgvector + shared communities.</li>
-                  <li><b>Forge Secure</b> — security scanner (gitleaks + osv + semgrep) → masked findings + CI gate. Private, in active dev.</li>
+                  <li><b>Forge Secure</b> — security scanner (gitleaks + osv + semgrep) → masked findings + CI gate. Open source, active dev.</li>
                   <li><b>Sutra feature viewer</b> — interactive flow + health dashboard; JS/TS + Python.</li>
                   <li><b>Autonomous SDLC</b> — planner → executor → verify loop; mistake-ledger driven. Manual today, automating the orchestrator.</li>
                 </ul>
