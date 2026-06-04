@@ -1328,6 +1328,131 @@ footer { border-top: 1px solid var(--border); padding: 40px 0 60px; margin-top: 
 }
 
 /* ============================================================
+   /watch — recorded "watch the AI build" showcase (unlisted)
+   ============================================================ */
+.watch-hero { padding: 80px 0 56px; position: relative; overflow: hidden; }
+.watch-h1 { font-size: clamp(34px,5.5vw,58px); font-weight: 600; letter-spacing: -0.04em; line-height: 1.04; margin-top: 14px; text-wrap: balance; }
+.watch-h1 .ember { color: var(--ember); }
+.watch-sub { margin-top: 18px; color: var(--text-2); font-size: clamp(15px,1.6vw,17px); max-width: 60ch; line-height: 1.6; }
+
+.watch-honesty { margin-top: 28px; display: flex; gap: 12px; align-items: flex-start; background: var(--surface-1); border: 1px solid var(--border-bright); border-left: 3px solid var(--ember); border-radius: 8px; padding: 14px 16px; max-width: 72ch; }
+.watch-honesty-tag { flex-shrink: 0; font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; padding: 3px 7px; border-radius: 4px; background: var(--ember); color: #0a0a0a; font-weight: 700; }
+.watch-honesty p { font-size: 13px; color: var(--text-2); line-height: 1.6; }
+
+.watch-runmeta { margin-top: 24px; display: flex; gap: 8px; flex-wrap: wrap; font-family: var(--mono); font-size: 11px; }
+.watch-runmeta-chip { padding: 4px 10px; background: var(--surface-1); border: 1px solid var(--border); border-radius: 999px; color: var(--text-3); }
+.watch-runmeta-chip .ember { color: var(--ember); }
+
+.watch-section { padding: 64px 0; }
+.watch-section + .watch-section { border-top: 1px solid var(--border); }
+
+/* phase rail */
+.watch-rail { list-style: none; display: grid; grid-template-columns: repeat(5,1fr); gap: 12px; }
+.watch-rail-step { display: flex; gap: 10px; align-items: flex-start; background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px; padding: 16px 14px; }
+.watch-rail-num { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; font-family: var(--mono); font-size: 11px; font-weight: 700; color: var(--ember); background: var(--ember-faint); border: 1px solid rgba(255,122,26,0.3); }
+.watch-rail-label { display: block; font-size: 13px; font-weight: 600; color: var(--text-1); }
+.watch-rail-blurb { display: block; font-size: 11.5px; color: var(--text-3); margin-top: 4px; line-height: 1.45; }
+
+/* stories */
+.watch-stories { display: flex; flex-direction: column; gap: 24px; }
+.watch-story { background: var(--surface-1); border: 1px solid var(--border); border-radius: 14px; padding: 26px 28px; }
+.watch-story-head { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+.watch-story-id { flex-shrink: 0; font-family: var(--mono); font-size: 18px; font-weight: 700; color: var(--ember); }
+.watch-story-title { font-size: 18px; font-weight: 600; letter-spacing: -0.02em; color: var(--text-1); }
+.watch-story-epic { font-family: var(--mono); font-size: 10.5px; color: var(--text-3); }
+.watch-story-summary { font-size: 13.5px; color: var(--text-2); line-height: 1.6; border-left: 2px solid var(--ember); padding-left: 12px; margin-bottom: 18px; }
+
+.watch-block { margin-top: 16px; }
+.watch-block-tag { font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-4); margin-bottom: 10px; }
+
+.watch-ac { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.watch-ac li { font-size: 12.5px; color: var(--text-2); line-height: 1.5; padding-left: 16px; position: relative; }
+.watch-ac li::before { content: "\2713"; position: absolute; left: 0; color: var(--green); font-size: 11px; }
+
+.watch-agents { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; margin-bottom: 14px; }
+.watch-agent { background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; }
+.watch-agent-top { display: flex; align-items: center; gap: 6px; margin-bottom: 6px; }
+.watch-agent-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); animation: breath 1.8s ease-in-out infinite; }
+.watch-agent-name { font-size: 12px; font-weight: 600; color: var(--text-1); }
+.watch-agent-role { font-family: var(--mono); font-size: 9.5px; color: var(--text-3); margin-left: auto; }
+.watch-agent-task { font-family: var(--mono); font-size: 10.5px; color: var(--text-2); line-height: 1.4; display: block; }
+
+.watch-diff { background: #08080a; border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; font-family: var(--mono); font-size: 11.5px; }
+.watch-diff-row { display: flex; justify-content: space-between; gap: 12px; padding: 2px 0; color: var(--text-2); }
+.watch-diff-file { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.watch-diff-add { color: var(--green); flex-shrink: 0; }
+.watch-diff-foot { margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--border-bright); color: var(--text-2); }
+.watch-diff-foot .green { color: var(--green); }
+
+.watch-findings { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px; }
+.watch-finding { display: flex; align-items: baseline; gap: 8px; font-size: 12px; color: var(--text-2); line-height: 1.5; padding: 8px 10px; border-radius: 6px; background: var(--surface-2); border-left: 2px solid var(--border-bright); flex-wrap: wrap; }
+.watch-finding.blocker { border-left-color: var(--ember); background: var(--ember-faint); }
+.watch-finding-badge { flex-shrink: 0; font-family: var(--mono); font-size: 8.5px; letter-spacing: 0.08em; text-transform: uppercase; padding: 2px 5px; border-radius: 3px; background: var(--surface-3); color: var(--text-2); font-weight: 600; }
+.watch-finding.blocker .watch-finding-badge { background: var(--ember); color: #0a0a0a; }
+.watch-finding-ok { font-family: var(--mono); font-size: 10px; color: var(--green); margin-left: auto; }
+
+.watch-tests { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.watch-test-chip { font-family: var(--mono); font-size: 11px; color: var(--text-2); background: var(--surface-2); border: 1px solid var(--border); border-radius: 999px; padding: 4px 10px; }
+.watch-test-chip .green { color: var(--green); }
+.watch-test-n { color: var(--ember); }
+.watch-test-gate { font-family: var(--mono); font-size: 11px; color: var(--text-3); margin-left: auto; }
+.watch-test-gate .green { color: var(--green); }
+.watch-tests .green { color: var(--green); }
+
+.watch-commit { display: flex; gap: 10px; align-items: baseline; font-family: var(--mono); font-size: 12px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 6px; padding: 10px 12px; flex-wrap: wrap; }
+.watch-commit-hash { color: var(--ember); flex-shrink: 0; }
+.watch-commit-subject { color: var(--text-1); }
+.watch-commit-meta { display: flex; justify-content: space-between; gap: 12px; margin-top: 6px; font-family: var(--mono); font-size: 10px; color: var(--text-4); flex-wrap: wrap; }
+.watch-commit-push { color: var(--amber); }
+
+.watch-closing { text-align: center; }
+.watch-closing-line { font-size: 15px; color: var(--text-2); max-width: 60ch; margin: 0 auto; line-height: 1.7; }
+.watch-closing-line b { color: var(--text-1); }
+.watch-closing-cta { margin-top: 24px; }
+
+/* discreet footer button on homepage */
+.watch-cta-link { font-family: var(--mono); font-size: 11px; color: var(--text-4); transition: color .2s; }
+.watch-cta-link:hover { color: var(--ember); }
+
+/* "powered by" — the 3 public ecosystem products */
+.watch-powered { margin-top: 28px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.watch-powered-tag { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-4); }
+.watch-powered-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.watch-powered-item { display: flex; flex-direction: column; gap: 1px; padding: 8px 14px; background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px; transition: border-color .2s, transform .2s; }
+.watch-powered-item:hover { border-color: var(--ember); transform: translateY(-1px); }
+.watch-powered-name { font-size: 13px; font-weight: 600; color: var(--text-1); }
+.watch-powered-host { font-family: var(--mono); font-size: 10px; color: var(--text-3); }
+
+/* per-run status pill (candidate / recorded) */
+.watch-status-pill { margin-left: auto; flex-shrink: 0; font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 8px; border-radius: 999px; border: 1px solid var(--border-bright); color: var(--text-3); background: var(--surface-2); }
+.watch-status-pill.candidate { color: var(--amber); border-color: rgba(251,191,36,0.3); }
+.watch-status-pill.recorded { color: var(--green); border-color: rgba(74,222,128,0.3); }
+
+/* five-phase Autonomous-SDLC timeline (per run) */
+.watch-phases { list-style: none; display: flex; flex-direction: column; gap: 0; margin: 18px 0; position: relative; }
+.watch-phase { display: flex; gap: 14px; position: relative; padding-bottom: 18px; }
+.watch-phase:last-child { padding-bottom: 0; }
+.watch-phase-marker { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; }
+.watch-phase-num { width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; font-family: var(--mono); font-size: 11px; font-weight: 700; color: var(--ember); background: var(--ember-faint); border: 1px solid rgba(255,122,26,0.3); z-index: 1; }
+/* connecting line between phase markers */
+.watch-phase:not(:last-child) .watch-phase-marker::after { content: ''; position: absolute; top: 24px; bottom: 0; width: 1px; background: var(--border-bright); }
+.watch-phase-body { flex: 1; min-width: 0; }
+.watch-phase-head { display: flex; flex-direction: column; gap: 2px; margin-bottom: 8px; }
+.watch-phase-name { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ember); }
+.watch-phase-summary { font-size: 13.5px; font-weight: 600; color: var(--text-1); line-height: 1.5; }
+.watch-phase-detail { font-size: 12.5px; color: var(--text-2); line-height: 1.6; margin-top: 8px; }
+
+@media (max-width: 880px) {
+  .watch-rail { grid-template-columns: repeat(2,1fr); }
+  .watch-agents { grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 560px) {
+  .watch-rail { grid-template-columns: 1fr; }
+  .watch-agents { grid-template-columns: 1fr; }
+  .watch-story { padding: 18px 16px; }
+}
+
+/* ============================================================
    Reduced motion
    ============================================================ */
 @media (prefers-reduced-motion: reduce) {

@@ -364,7 +364,7 @@ export default function RoadmapPage() {
                         'CI gate — fail PRs on new secrets vs baseline',
                         'One-line GitHub Action',
                         'Trend-over-time dashboard',
-                        'Frappe + Python depth',
+                        'Deeper Python + multi-language depth',
                       ].map((f) => <li key={f}>{f}</li>)}
                     </ul>
                   </div>

@@ -881,7 +881,7 @@ export default function HomePage() {
                 <ul className="rm-list">
                   <li><b>Forge Cloud</b> — hosted MCP endpoint, preview. Postgres + pgvector + shared communities.</li>
                   <li><b>Forge Secure</b> — security scanner (gitleaks + osv + semgrep) → masked findings + CI gate. Private, in active dev.</li>
-                  <li><b>Sutra feature viewer</b> — interactive flow + health dashboard; Python/Frappe parity.</li>
+                  <li><b>Sutra feature viewer</b> — interactive flow + health dashboard; JS/TS + Python.</li>
                   <li><b>Autonomous SDLC</b> — planner → executor → verify loop; mistake-ledger driven. Manual today, automating the orchestrator.</li>
                 </ul>
               </div>
@@ -922,6 +922,7 @@ export default function HomePage() {
             <a href="#architecture">docs</a>
             <a href="https://www.linkedin.com/in/sambhaji-kolate-845a7279/" target="_blank" rel="noreferrer">linkedin</a>
             <a href="mailto:erp@sbknext.com">erp@sbknext.com</a>
+            <a href="/watch" className="watch-cta-link" title="recorded run — watch the AI build">Watch the AI build →</a>
           </div>
           <div style={{ fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--text-4)' }}>
             © 2026 sbknext · MIT
