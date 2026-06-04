@@ -39,7 +39,7 @@ The Forge brain (the MCP memory + community server) is open-core under **Apache-
 | `corebrain-cli` (`cb`) | crate inside `corebrain` | Apache-2.0 | Local dev / admin / scripting binary |
 | `corebrain-plugin-*` | crates inside `corebrain` | Apache-2.0 | Memory + community reference plugins, plugin API |
 | `brain-api` | the Node.js server powering `brain.sbknext.com` today | MIT | REST API + MCP install/token endpoints + skill browser (current production server) |
-| `forge-client` SDK | `github.com/sbknext/forge-client` (`pip install sbknext-forge`, `npm @sbkolate/forge`) | see repo | The SDK your code calls; talks to either a self-hosted server or the hosted endpoint |
+| `forge-client` SDK | `github.com/sbknext/forge-client` (`pip install sbknext-forge`, `npm @sbknext/forge`) | see repo | The SDK your code calls; talks to either a self-hosted server or the hosted endpoint |
 
 Storage:
 - **corebrain / local** — SQLite on your machine, local embeddings. No network calls. (Per

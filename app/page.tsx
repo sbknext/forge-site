@@ -503,7 +503,7 @@ export default function HomePage() {
                   <span style={{ fontFamily: 'var(--mono)', fontSize: 9, color: '#6ee7b7', background: 'rgba(110,231,183,0.1)', border: '1px solid rgba(110,231,183,0.25)', borderRadius: 4, padding: '1px 5px' }}>live on npm</span>
                 </div>
                 <code style={{ display: 'block', fontFamily: 'var(--mono)', fontSize: 12, color: 'var(--text-1)', background: 'var(--surface-2)', padding: '7px 12px', borderRadius: 6 }}>
-                  npm install @sbkolate/forge
+                  npm install @sbknext/forge
                 </code>
               </div>
 
@@ -865,7 +865,7 @@ export default function HomePage() {
                 </div>
                 <ul className="rm-list">
                   <li><b>Forge v0.4.3</b> — agent orchestration runtime, self-hosting, live at forge.sbknext.com.</li>
-                  <li><b>forge SDK</b> — <code>pip install sbknext-forge</code> · <code>npm @sbkolate/forge</code>. Both live on PyPI + npm.</li>
+                  <li><b>forge SDK</b> — <code>pip install sbknext-forge</code> · <code>npm @sbknext/forge</code>. Both live on PyPI + npm.</li>
                   <li><b>Brain MCP</b> — hosted memory protocol at mcp.sbknext.com. Per-user isolated, self-hostable.</li>
                   <li><b>Echo AI</b> — consumer AI wellness (Ayurveda-informed), live at echo.sbknext.com. Try the hero demo.</li>
                   <li><b>claude-fuse</b> — MIT, local-first observability for Claude Code sessions.</li>
