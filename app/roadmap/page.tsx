@@ -228,9 +228,9 @@ export default function RoadmapPage() {
                 {
                   version: '2.0',
                   name: 'Cloud',
-                  desc: 'Sync, teams, paid tier',
+                  desc: 'Sync, teams, adoption',
                   when: 'Month 3–5',
-                  blurb: 'Your memory, everywhere. Team brains. Pro tier live.',
+                  blurb: 'Your memory, everywhere. Team brains. Free hosted tier, generous rate limits.',
                   status: 'planned' as const,
                 },
                 {
@@ -343,7 +343,7 @@ export default function RoadmapPage() {
                   <span className="rdm-detail-name">Cloud</span>
                   <RmBadge variant="planned" label="planned" />
                 </div>
-                <p className="rdm-detail-tagline">Retention and first revenue. Open-core stays free; hosted convenience is the wallet.</p>
+                <p className="rdm-detail-tagline">Retention and adoption. Forge is free; open-core (Apache-2.0) is yours to self-host. Need scale or compliance? Self-host or contact us.</p>
                 <div className="rdm-detail-tracks">
                   <div className="rdm-track">
                     <div className="rdm-track-name">Brain Cloud</div>
@@ -351,8 +351,8 @@ export default function RoadmapPage() {
                       {[
                         'Multi-device sync',
                         'Team / shared brains',
-                        'SSO and audit log',
-                        'Quota tiers: Free → Pro ~$10/mo → Team',
+                        'SSO and audit log (enterprise self-host)',
+                        'Free hosted tier — generous rate limits, no paywall',
                         'Import notes, ledgers, git history',
                       ].map((f) => <li key={f}>{f}</li>)}
                     </ul>
@@ -364,12 +364,12 @@ export default function RoadmapPage() {
                         'CI gate — fail PRs on new secrets vs baseline',
                         'One-line GitHub Action',
                         'Trend-over-time dashboard',
-                        'Frappe + Python depth',
+                        'Deeper Python + multi-language depth',
                       ].map((f) => <li key={f}>{f}</li>)}
                     </ul>
                   </div>
                 </div>
-                <aside className="rdm-gate">Gate → First paying users (even 3–5); D7 retention climbing.</aside>
+                <aside className="rdm-gate">Gate → Adoption + retention: N teams self-host or N active on the free hosted tier; D7 retention climbing.</aside>
               </div>
 
               {/* 2.5 */}
@@ -474,9 +474,9 @@ export default function RoadmapPage() {
                   ],
                 },
                 {
-                  track: 'revenue',
+                  track: 'adoption',
                   segments: [
-                    { start: 5, end: 12, label: 'Pro + Team', color: '#4ade80' },
+                    { start: 5, end: 12, label: 'free tier + self-host', color: '#4ade80' },
                   ],
                 },
                 {
@@ -536,11 +536,11 @@ export default function RoadmapPage() {
                 { repo: 'brain-mcp / corebrain', becomes: 'The product — Brain (Cloud + open-core)' },
                 { repo: 'forge-sutra', becomes: 'Funnel #1 — free, live-watch, feeds Brain' },
                 { repo: 'claude-fuse', becomes: 'Funnel #2 — auto-capture engine' },
-                { repo: 'forge-secure', becomes: 'Second product — CI gate (month 3+)' },
+                { repo: 'forge-secure', becomes: 'Second tool — CI gate (month 3+), free + self-hostable' },
                 { repo: 'forge-client', becomes: 'The SDK every tool installs' },
                 { repo: 'forge-site', becomes: 'One-story front door → Brain' },
                 { repo: 'forge-skills', becomes: '3.0 marketplace seed' },
-                { repo: 'forge framework / harness', becomes: 'The story — #1 content engine, not a sold product' },
+                { repo: 'forge framework / harness', becomes: 'The story — #1 content engine, free and open' },
                 { repo: 'echo-ai', becomes: 'Proof-of-Forge demo' },
               ].map((r) => (
                 <div key={r.repo} className="rdm-repo-row">
@@ -585,14 +585,17 @@ export default function RoadmapPage() {
         <section className="reveal">
           <div className="container rdm-closing">
             <p className="rdm-closing-line">
-              No date-driven shipping. Each release ships when its gate is met. We build in public — follow along.
+              No date-driven shipping. Each release ships when its gate is met. Forge is free — generous rate limits, no paywall. Need to scale, run private, or meet compliance/SSO? Self-host the open-core (Apache-2.0), or contact us for a one-time setup. We build in public — follow along.
             </p>
             <div className="hero-cta-row" style={{ justifyContent: 'center', marginTop: 32 }}>
               <a className="btn-primary" href="https://mcp.sbknext.com" target="_blank" rel="noreferrer">
-                Get Brain <span className="arr">→</span>
+                Get Brain — free <span className="arr">→</span>
               </a>
-              <a className="btn-ghost" href="https://github.com/sbknext" target="_blank" rel="noreferrer">
-                Star on GitHub <span className="arr">→</span>
+              <a className="btn-ghost" href="https://github.com/sbknext/corebrain" target="_blank" rel="noreferrer">
+                Self-host (open-core) <span className="arr">→</span>
+              </a>
+              <a className="btn-ghost" href="mailto:erp@sbknext.com?subject=Forge%20consulting%20%2F%20enterprise%20setup">
+                Contact us <span className="arr">→</span>
               </a>
             </div>
           </div>

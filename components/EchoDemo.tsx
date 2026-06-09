@@ -24,28 +24,28 @@ interface Prompt {
 
 const PROMPTS: Prompt[] = [
   {
-    id: 'sleep',
-    label: "I can't sleep well",
+    id: 'explain',
+    label: 'Explain a concept',
     reply:
-      "Disturbed sleep often signals vata imbalance — the dosha governing movement and the nervous system. Try warm ashwagandha milk 30 minutes before bed, and dim all screens by 9 pm. A brief abhyanga (self-massage with sesame oil) on your feet grounds vata quickly and cues the body to wind down. This is general wellness guidance, not medical advice — please consult a physician if sleeplessness persists.",
+      "Sure — give me the concept and your current level, and I'll explain it from first principles with a concrete example, then a one-line summary you can keep. Tell me where it stops making sense and I'll go deeper exactly there. Anything I'm unsure about I'll flag rather than guess.",
   },
   {
-    id: 'stress',
-    label: 'Stress at work',
+    id: 'plan',
+    label: 'Plan my day',
     reply:
-      "Chronic work stress usually fans pitta — the fire dosha — leading to irritability and burnout. Brahmi (bacopa) or shankhpushpi tea mid-afternoon can cool mental heat. Even a 10-minute walk in natural light after lunch lowers cortisol measurably. Small anchors — three deep breaths before each meeting — rebuild the gap between stimulus and response. For persistent stress, speak with a qualified health professional.",
+      "Drop your tasks and any fixed commitments and I'll sketch a realistic order — hardest-focus work in your peak window, quick wins batched, buffer between meetings. I'll keep it to what actually fits the hours you have, not an idealized list, and call out anything that won't realistically fit today.",
   },
   {
-    id: 'energy',
-    label: 'Low energy lately',
+    id: 'summarize',
+    label: 'Summarize this',
     reply:
-      "Persistent low energy often traces to kapha congestion or poor agni (digestive fire). A glass of warm water with fresh ginger and a squeeze of lime first thing in the morning kindles agni efficiently. Avoid cold food and heavy lunches, which dampen kapha further. Triphala before bed supports overnight detox and morning lightness. These are lifestyle suggestions — if fatigue is severe or sudden, see a doctor.",
+      "Paste the text or a link and I'll give you the gist in 3-4 lines, then the key points as bullets, then anything that looked uncertain or one-sided in the source. I won't invent details that aren't there — if something's ambiguous I'll say so rather than smooth it over.",
   },
   {
-    id: 'acidity',
-    label: 'Acidity after meals',
+    id: 'draft',
+    label: 'Draft a message',
     reply:
-      "Post-meal acidity is a classic pitta aggravation — excess fire in the digestive tract. Sipping room-temperature water (never ice-cold) during meals, and avoiding sour or spicy foods after 6 pm, relieves most mild cases. Chewing a pinch of fennel seeds after eating is a simple, evidence-supported pacifier. Aloe vera juice (small dose, 30 ml) before meals is another traditional soother. This is not a substitute for medical evaluation of recurring symptoms.",
+      "Tell me the recipient, the goal, and the tone, and I'll draft something tight you can send as-is or tweak. I'll keep it honest and specific — no filler, no overclaiming — and give you a shorter and a warmer variant so you can pick.",
   },
 ];
 
@@ -153,7 +153,7 @@ export default function EchoDemo() {
             live demo
           </a>
         </div>
-        <p className="echo-demo__tagline">Ayurveda-informed wellness AI · multi-model</p>
+        <p className="echo-demo__tagline">Consumer AI assistant · multi-model</p>
       </div>
 
       {/* Mode pills */}
@@ -230,7 +230,7 @@ export default function EchoDemo() {
 
       {/* Prompt chips */}
       {phase === 'idle' && (
-        <div className="echo-demo__prompts" role="group" aria-label="Sample wellness prompts">
+        <div className="echo-demo__prompts" role="group" aria-label="Sample prompts">
           {PROMPTS.map(p => (
             <button
               key={p.id}

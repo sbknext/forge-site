@@ -503,7 +503,7 @@ export default function HomePage() {
                   <span style={{ fontFamily: 'var(--mono)', fontSize: 9, color: '#6ee7b7', background: 'rgba(110,231,183,0.1)', border: '1px solid rgba(110,231,183,0.25)', borderRadius: 4, padding: '1px 5px' }}>live on npm</span>
                 </div>
                 <code style={{ display: 'block', fontFamily: 'var(--mono)', fontSize: 12, color: 'var(--text-1)', background: 'var(--surface-2)', padding: '7px 12px', borderRadius: 6 }}>
-                  npm install @sbkolate/forge
+                  npm install @sbknext/forge
                 </code>
               </div>
 
@@ -639,7 +639,7 @@ export default function HomePage() {
                   </div>
                   <div className="meta"><span className="dot" />live</div>
                 </div>
-                <div className="desc">Consumer AI wellness assistant — Ayurveda-informed, multi-provider routing. Try the live demo in the hero.</div>
+                <div className="desc">Consumer AI assistant — conversational chat, multi-provider routing. Try the live demo in the hero.</div>
                 <div className="tail">
                   <span className="stat"><span className="ember">●</span> live since Apr 2026</span>
                   <a className="link" href="https://echo.sbknext.com" target="_blank" rel="noreferrer">open <span>→</span></a>
@@ -728,6 +728,23 @@ export default function HomePage() {
                 </div>
               </div>
 
+              {/* Forge Secure */}
+              <div className="product-card">
+                <div className="head">
+                  <div className="pmark" style={{ color: '#f87171' }}>🛡</div>
+                  <div>
+                    <div className="pname">Forge Secure</div>
+                    <div style={{ fontFamily: 'var(--mono)', fontSize: 9, color: '#f87171', background: 'rgba(248,113,113,0.1)', border: '1px solid rgba(248,113,113,0.25)', borderRadius: 4, padding: '1px 6px', display: 'inline-block', marginTop: 2 }}>open source</div>
+                  </div>
+                  <div className="meta"><span className="dot" />live</div>
+                </div>
+                <div className="desc">Security scanner — gitleaks + osv + semgrep → masked, candidate-labelled findings + a CI gate. Built into the four-agent loop.</div>
+                <div className="tail">
+                  <span className="stat"><span className="ember">●</span> secrets + deps · CI gate</span>
+                  <a className="link" href="https://github.com/sbknext/forge-secure" target="_blank" rel="noreferrer">github <span>→</span></a>
+                </div>
+              </div>
+
               {/* Your project */}
               <div className="product-card dashed-tile" style={{ backgroundColor: 'transparent', color: 'var(--text-3)' }}>
                 <div className="head">
@@ -755,7 +772,7 @@ export default function HomePage() {
             <div className="section-head">
               <span className="eyebrow"><span className="bracket">[</span> ECOSYSTEM <span className="bracket">]</span></span>
               <h2>Two ways to run Forge.</h2>
-              <p>One protocol. One SDK. Same agent code.</p>
+              <p>One protocol. One SDK. Same agent code. Both free — no card, no subscription.</p>
             </div>
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20, maxWidth: 760, margin: '0 auto' }}>
@@ -794,7 +811,7 @@ export default function HomePage() {
                 <div style={{ fontSize: 17, fontWeight: 700, color: 'var(--text-1)', marginBottom: 6 }}>Forge Cloud <span style={{ fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--ember)', background: 'var(--ember-faint)', border: '1px solid rgba(255,122,26,0.3)', borderRadius: 4, padding: '1px 6px', marginLeft: 6 }}>preview</span></div>
                 <div style={{ fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--ember)', marginBottom: 10 }}>Hosted MCP endpoint · cb.sbknext.com/mcp</div>
                 <p style={{ color: 'var(--text-3)', fontSize: 13.5, lineHeight: 1.65, marginBottom: 16 }}>
-                  Postgres + pgvector + shared communities. Free token via signup.
+                  Postgres + pgvector + shared communities. Free — generous rate limits, no paywall. Free token via signup.
                 </p>
                 <a
                   href="https://mcp.sbknext.com"
@@ -805,6 +822,44 @@ export default function HomePage() {
                   mcp.sbknext.com →
                 </a>
                 <div style={{ fontFamily: 'var(--mono)', fontSize: 10.5, color: 'var(--text-4)', marginTop: 8 }}>(preview · free token via signup)</div>
+              </div>
+            </div>
+
+            {/* Enterprise / self-host + contact */}
+            <div style={{
+              maxWidth: 760,
+              margin: '24px auto 0',
+              background: 'var(--surface-1)',
+              border: '1px solid var(--border)',
+              borderRadius: 10,
+              padding: '24px 26px',
+            }}>
+              <div style={{ fontFamily: 'var(--mono)', fontSize: 10, color: 'var(--text-3)', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: 10 }}>Enterprise &amp; help</div>
+              <p style={{ color: 'var(--text-3)', fontSize: 13.5, lineHeight: 1.7, marginBottom: 16 }}>
+                Forge is free with generous rate limits — the only limit is rate, never features behind a paywall.
+                Need private infra, scale, or compliance/SSO? <b style={{ color: 'var(--text-2)' }}>Self-host the open-core</b> (Apache-2.0) — your data never leaves your box.
+                Want consulting, onboarding, or a hand standing it up? Reach out — enterprise setup is a one-time engagement, no recurring subscription.
+              </p>
+              <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+                <a
+                  href="https://github.com/sbknext/corebrain"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-ghost"
+                  style={{ fontSize: 13, padding: '8px 18px', border: '1px solid rgba(255,122,26,0.5)', color: 'var(--ember)', fontWeight: 600 }}
+                >
+                  Self-host (open-core) <span className="arr">→</span>
+                </a>
+                <a
+                  href="mailto:erp@sbknext.com?subject=Forge%20consulting%20%2F%20enterprise%20setup"
+                  className="btn-ghost"
+                  style={{ fontSize: 13, padding: '8px 18px' }}
+                >
+                  Contact us <span className="arr">→</span>
+                </a>
+              </div>
+              <div style={{ fontFamily: 'var(--mono)', fontSize: 10.5, color: 'var(--text-4)', marginTop: 10 }}>
+                See <a href="https://github.com/sbknext/forge-site/blob/main/SELF-HOST.md" target="_blank" rel="noreferrer" style={{ color: 'var(--ember)', borderBottom: '1px dashed rgba(255,122,26,0.4)' }}>SELF-HOST.md</a> for the open-core self-host guide.
               </div>
             </div>
           </div>
@@ -827,9 +882,9 @@ export default function HomePage() {
                 </div>
                 <ul className="rm-list">
                   <li><b>Forge v0.4.3</b> — agent orchestration runtime, self-hosting, live at forge.sbknext.com.</li>
-                  <li><b>forge SDK</b> — <code>pip install sbknext-forge</code> · <code>npm @sbkolate/forge</code>. Both live on PyPI + npm.</li>
+                  <li><b>forge SDK</b> — <code>pip install sbknext-forge</code> · <code>npm @sbknext/forge</code>. Both live on PyPI + npm.</li>
                   <li><b>Brain MCP</b> — hosted memory protocol at mcp.sbknext.com. Per-user isolated, self-hostable.</li>
-                  <li><b>Echo AI</b> — consumer AI wellness (Ayurveda-informed), live at echo.sbknext.com. Try the hero demo.</li>
+                  <li><b>Echo AI</b> — consumer AI assistant, live at echo.sbknext.com. Try the hero demo.</li>
                   <li><b>claude-fuse</b> — MIT, local-first observability for Claude Code sessions.</li>
                   <li><b>Sutra</b> — MIT, static structural code-graph + drift checks. Open source on GitHub.</li>
                 </ul>
@@ -842,8 +897,8 @@ export default function HomePage() {
                 </div>
                 <ul className="rm-list">
                   <li><b>Forge Cloud</b> — hosted MCP endpoint, preview. Postgres + pgvector + shared communities.</li>
-                  <li><b>Forge Secure</b> — security scanner (gitleaks + osv + semgrep) → masked findings + CI gate. Private, in active dev.</li>
-                  <li><b>Sutra feature viewer</b> — interactive flow + health dashboard; Python/Frappe parity.</li>
+                  <li><b>Forge Secure</b> — security scanner (gitleaks + osv + semgrep) → masked findings + CI gate. Open source, active dev.</li>
+                  <li><b>Sutra feature viewer</b> — interactive flow + health dashboard; JS/TS + Python.</li>
                   <li><b>Autonomous SDLC</b> — planner → executor → verify loop; mistake-ledger driven. Manual today, automating the orchestrator.</li>
                 </ul>
               </div>
@@ -884,6 +939,7 @@ export default function HomePage() {
             <a href="#architecture">docs</a>
             <a href="https://www.linkedin.com/in/sambhaji-kolate-845a7279/" target="_blank" rel="noreferrer">linkedin</a>
             <a href="mailto:erp@sbknext.com">erp@sbknext.com</a>
+            <a href="/watch" className="watch-cta-link" title="recorded run — watch the AI build">Watch the AI build →</a>
           </div>
           <div style={{ fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--text-4)' }}>
             © 2026 sbknext · MIT
