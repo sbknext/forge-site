@@ -1,7 +1,7 @@
 /**
  * Secret mask — TypeScript port of the CANONICAL Forge harness mask().
  *
- * SOURCE OF TRUTH: /Users/sam/Documents/saas/forge-harness/src/mask.js
+ * SOURCE OF TRUTH: forge-harness src/mask.js
  * This is a kept-in-sync port, not a fork. The harness file ships as ESM `.js`
  * outside this Next.js project's rootDir; a static-export build cannot reliably
  * transpile a cross-repo import, so the canonical logic is vendored here with
@@ -42,7 +42,7 @@ export function isHighEntropy(s: unknown, threshold = 3.5): boolean {
 }
 
 // Ordering is load-bearing: specific prefixes BEFORE the generic high-entropy floor.
-export const SECRET_PATTERNS: Pattern[] = [
+const _SECRET_PATTERNS: Pattern[] = [
   // Bearer <token>
   { name: 'bearer', re: /\b(Bearer\s+)([A-Za-z0-9._\-=]{8,512})/gi, fn: (m: string, ...g: string[]) => `${g[0]}${maskFragment(g[1])}` },
   // OpenRouter (v1) — before generic sk-
@@ -75,11 +75,14 @@ export const SECRET_PATTERNS: Pattern[] = [
   { name: 'generic32', re: /\b[A-Za-z0-9_-]{32,512}\b/g, fn: (m: string) => (isHighEntropy(m) ? REDACTED : m) },
 ];
 
+/** Immutable exported view of the secret patterns array. */
+export const SECRET_PATTERNS: readonly Pattern[] = Object.freeze(_SECRET_PATTERNS);
+
 /** mask — single canonical entry point for SECRET masking. */
 export function mask(text: unknown): unknown {
   if (typeof text !== 'string' || text.length === 0) return text;
   let out = text;
-  for (const { re, fn } of SECRET_PATTERNS) {
+  for (const { re, fn } of _SECRET_PATTERNS) {
     re.lastIndex = 0;
     out = out.replace(re, fn);
   }

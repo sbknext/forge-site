@@ -25,7 +25,7 @@ export const dynamic = 'force-static';
 const ECOSYSTEM = [
   { name: 'mcp', host: 'mcp.sbknext.com', href: 'https://mcp.sbknext.com', blurb: 'Brain MCP — the per-user memory + recall layer.' },
   { name: 'forge', host: 'forge.sbknext.com', href: 'https://forge.sbknext.com', blurb: 'Forge — orchestrates the sub-agent team.' },
-  { name: 'echo', host: 'echo-ai', href: 'https://forge.sbknext.com', blurb: 'Echo — the branded chat surface.' },
+  { name: 'echo', host: 'echo.sbknext.com', href: 'https://echo.sbknext.com', blurb: 'Echo — the branded chat surface.' },
 ];
 
 function PhaseRail() {
