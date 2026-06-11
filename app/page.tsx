@@ -32,6 +32,7 @@ export default function HomePage() {
             <a href="#architecture">architecture</a>
             <a href="#install">install</a>
             <a href="#gallery">agents</a>
+            <a href="#suite">suite</a>
             <a href="#built">built with</a>
             <a href="/roadmap">roadmap</a>
             <a
@@ -613,6 +614,93 @@ export default function HomePage() {
                   <span>$ forge ship</span>
                   <span className="ember">→ prod · v0.4.3</span>
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        {/* ── SUITE ── */}
+        <section id="suite" className="reveal">
+          <div className="container">
+            <div className="section-head">
+              <span className="eyebrow"><span className="bracket">[</span> SUITE <span className="bracket">]</span></span>
+              <h2>Three tools. One brain.</h2>
+              <p>Structural truth + security posture + LLM reliability — one MCP surface. Each tool ships independently, tested before merge, honest about what it doesn&apos;t know.</p>
+            </div>
+
+            <div className="products">
+              {/* Sutra */}
+              <div className="product-card">
+                <div className="head">
+                  <div className="pmark" style={{ color: '#6ee7b7' }}>S</div>
+                  <div><div className="pname">Sutra</div></div>
+                  <div className="meta"><span className="dot" />live</div>
+                </div>
+                <div className="desc">See your product as features — derived from code, honest about what it doesn&apos;t know. 371 tests.</div>
+                <div className="tail">
+                  <span className="stat"><span className="ember">●</span> MIT · JS/TS · Phase 0</span>
+                  <a className="link" href="https://github.com/sbknext/forge-sutra" target="_blank" rel="noreferrer">github <span>→</span></a>
+                </div>
+              </div>
+
+              {/* Forge Secure */}
+              <div className="product-card">
+                <div className="head">
+                  <div className="pmark" style={{ color: '#f87171' }}>FS</div>
+                  <div><div className="pname">Forge Secure</div></div>
+                  <div className="meta"><span className="dot" />live</div>
+                </div>
+                <div className="desc">Security posture dashboard — gitleaks/osv/semgrep orchestrated, masked by default. 363 tests.</div>
+                <div className="tail">
+                  <span className="stat"><span className="ember">●</span> open source · CI gate</span>
+                  <a className="link" href="https://github.com/sbknext/forge-secure" target="_blank" rel="noreferrer">github <span>→</span></a>
+                </div>
+              </div>
+
+              {/* Forge Harness */}
+              <div className="product-card">
+                <div className="head">
+                  <div className="pmark" style={{ color: '#a78bfa' }}>H</div>
+                  <div><div className="pname">Forge Harness</div></div>
+                  <div className="meta"><span className="dot" />live</div>
+                </div>
+                <div className="desc">Mechanical guards that make any LLM reliable — sloppy model 60.7% raw → 100% with harness (mock eval, candidate). 331 tests.</div>
+                <div className="tail">
+                  <span className="stat"><span className="ember">●</span> MIT · model-agnostic</span>
+                  <a className="link" href="https://github.com/sbknext/forge-harness" target="_blank" rel="noreferrer">github <span>→</span></a>
+                </div>
+              </div>
+            </div>
+
+            {/* Harness eval matrix */}
+            <div style={{
+              maxWidth: 620,
+              margin: '32px auto 0',
+              background: 'var(--surface-1)',
+              border: '1px solid var(--border)',
+              borderRadius: 10,
+              padding: '20px 24px',
+            }}>
+              <div style={{ fontFamily: 'var(--mono)', fontSize: 10, color: 'var(--text-3)', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: 14 }}>
+                mock-adapter eval — not a real-provider benchmark
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr auto auto', gap: '6px 20px', fontFamily: 'var(--mono)', fontSize: 12 }}>
+                <span style={{ color: 'var(--text-3)', fontSize: 10, textTransform: 'uppercase', letterSpacing: '0.1em' }}>model profile</span>
+                <span style={{ color: 'var(--text-3)', fontSize: 10, textTransform: 'uppercase', letterSpacing: '0.1em' }}>raw</span>
+                <span style={{ color: 'var(--text-3)', fontSize: 10, textTransform: 'uppercase', letterSpacing: '0.1em' }}>with harness</span>
+
+                <span style={{ color: 'var(--text-2)' }}>perfect</span>
+                <span style={{ color: '#6ee7b7' }}>100 / 100</span>
+                <span style={{ color: '#6ee7b7' }}>100 / 100</span>
+
+                <span style={{ color: 'var(--text-2)' }}>sloppy</span>
+                <span style={{ color: '#f87171' }}>60.7%</span>
+                <span style={{ color: '#6ee7b7' }}>100%</span>
+
+                <span style={{ color: 'var(--text-2)' }}>broken (first-try 0%)</span>
+                <span style={{ color: '#f87171' }}>0%</span>
+                <span style={{ color: '#6ee7b7' }}>100%</span>
               </div>
             </div>
           </div>
